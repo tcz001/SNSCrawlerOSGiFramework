@@ -1,0 +1,15 @@
+1361928502214	Rename package 'userapibundle'
+1361928619027	Rename type 'SimpleLogService'
+1361928631989	Rename type 'SimpleLogServiceImpl'
+1361928891847	Rename package 'fetch.api.service'
+1361928975043	Rename type 'SimpleFetchService'
+1361928992565	Rename type 'SimpleFetchServiceImpl'
+1361929084701	Rename field 'simpleLogServiceTracker'
+1361929137363	Rename field 'simpleLogService'
+1361929265802	Delete element
+1361929272720	Delete element
+1361933791384	Delete element
+1361942442508	Rename method 'getOAuthCode'
+1361942450025	Rename method 'getOAuthToken'
+1361944008650	Rename type 'CrawlerService'
+1361944029778	Rename package 'fetch.api.service.user'

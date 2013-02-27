@@ -1,0 +1,12 @@
+package fetch.api.service.user;
+
+public interface CrawlerService {
+
+	public void fetch();
+
+	public void log();
+
+	public String getOAuthCode();
+	
+	public String getOAuthToken();
+}

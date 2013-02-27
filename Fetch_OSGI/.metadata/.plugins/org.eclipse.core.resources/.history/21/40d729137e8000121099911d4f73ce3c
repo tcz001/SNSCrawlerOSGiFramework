@@ -1,0 +1,9 @@
+package fetch.api.service.user;
+
+public class SimpleFetchServiceImpl implements SimpleFetchService {
+
+	public void log(String message) {
+		System.out.println(message);
+	}
+	
+}

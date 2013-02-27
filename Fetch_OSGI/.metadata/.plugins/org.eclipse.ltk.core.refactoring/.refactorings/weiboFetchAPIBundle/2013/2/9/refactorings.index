@@ -1,0 +1,13 @@
+1361857915326	Rename package 'fetchapibundle'
+1361860479648	Rename package 'fetch.api.oauth'
+1361861729928	Delete element
+1361862248292	Delete element
+1361929664801	Rename type 'GetFriendsTimelineImpl'
+1361930991182	Delete element
+1361935299156	Delete element
+1361936135734	Rename method 'getAccessToken'
+1361940326079	Delete element
+1361944054087	Rename package 'fetch.api.service.impl'
+1361944083147	Rename package 'fetch.api'
+1361944112614	Rename type 'WeiboFriendsTimelineCrawlerServiceImpl'
+1361944126214	Rename type 'WeiboUserTimelineCrawlerServiceImpl'

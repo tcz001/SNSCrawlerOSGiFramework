@@ -1,0 +1,226 @@
+!SESSION 2013-02-27 11:16:36.163 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_15
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=zh_CN
+Command-line arguments:  -dev file:/home/tcz/Fetch_OSGI/.metadata/.plugins/org.eclipse.pde.core/Fetch/dev.properties -os linux -ws gtk -arch x86 -consoleLog -console
+
+!ENTRY weiboFetchAPIBundle 4 0 2013-02-27 11:16:36.945
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "weiboFetchAPIBundle_1.0.0.qualifier [33]" could not be resolved. Reason: Missing Constraint: Import-Package: weibo4j; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY weibo4j-oauth2 4 0 2013-02-27 11:16:36.947
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "weibo4j-oauth2_1.0.0.qualifier [38]" could not be resolved. Reason: Missing Constraint: Import-Package: org.apache.commons.collections; version="3.2.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 4 0 2013-02-27 11:16:36.951
+!MESSAGE Bundle initial@reference:file:../../../../home/tcz/Fetch_OSGI/weibo4j-oauth2/ was not resolved.
+
+!ENTRY org.eclipse.osgi 4 0 2013-02-27 11:16:36.952
+!MESSAGE Bundle initial@reference:file:../../../../home/tcz/Fetch_OSGI/weiboFetchAPIBundle/ was not resolved.
+
+!ENTRY org.eclipse.osgi 2 0 2013-02-27 11:16:37.001
+!MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2013-02-27 11:16:37.001
+!MESSAGE Bundle initial@reference:file:../../../../home/tcz/Fetch_OSGI/weibo4j-oauth2/ was not resolved.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.001
+!MESSAGE Missing imported package org.apache.commons.net.whois_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.002
+!MESSAGE Missing imported package org.apache.commons.collections.buffer_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.002
+!MESSAGE Missing imported package org.apache.commons.net.telnet_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.002
+!MESSAGE Missing imported package org.apache.commons.net.ftp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.003
+!MESSAGE Missing imported package org.apache.commons.net.pop3_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.003
+!MESSAGE Missing imported package org.apache.commons.collections.set_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.003
+!MESSAGE Missing imported package org.apache.commons.collections_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.004
+!MESSAGE Missing imported package org.apache.commons.collections.collection_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.004
+!MESSAGE Missing imported package org.apache.commons.net.ntp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.004
+!MESSAGE Missing imported package org.apache.commons.collections.keyvalue_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.005
+!MESSAGE Missing imported package org.apache.commons.collections.comparators_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.005
+!MESSAGE Missing imported package org.apache.commons.net.util_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.005
+!MESSAGE Missing imported package org.apache.commons.discovery.jdk_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.006
+!MESSAGE Missing imported package org.apache.commons.collections.list_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.006
+!MESSAGE Missing imported package org.apache.commons.collections.bidimap_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.006
+!MESSAGE Missing imported package org.apache.commons.discovery.tools_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.007
+!MESSAGE Missing imported package org.apache.commons.net.bsd_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.007
+!MESSAGE Missing imported package org.apache.commons.discovery_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.007
+!MESSAGE Missing imported package org.apache.commons.net.echo_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.008
+!MESSAGE Missing imported package org.apache.commons.net.ftp.parser_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.008
+!MESSAGE Missing imported package org.apache.commons.net.time_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.008
+!MESSAGE Missing imported package org.apache.commons.collections.functors_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.009
+!MESSAGE Missing imported package org.apache.commons.net.daytime_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.009
+!MESSAGE Missing imported package org.apache.commons.net.finger_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.010
+!MESSAGE Missing imported package org.apache.commons.net.chargen_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.010
+!MESSAGE Missing imported package org.apache.commons.discovery.resource_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.011
+!MESSAGE Missing imported package org.apache.commons.net.tftp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.011
+!MESSAGE Missing imported package org.apache.commons.collections.bag_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.012
+!MESSAGE Missing imported package org.apache.commons.net_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.013
+!MESSAGE Missing imported package org.apache.commons.discovery.log_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.013
+!MESSAGE Missing imported package org.apache.commons.discovery.resource.classes_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.014
+!MESSAGE Missing imported package org.apache.commons.net.io_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.014
+!MESSAGE Missing imported package org.apache.commons.net.discard_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.015
+!MESSAGE Missing imported package org.apache.commons.net.smtp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.015
+!MESSAGE Missing imported package org.apache.commons.collections.map_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.016
+!MESSAGE Missing imported package org.apache.commons.collections.iterators_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.017
+!MESSAGE Missing imported package org.apache.commons.discovery.ant_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.017
+!MESSAGE Missing imported package org.apache.commons.discovery.resource.names_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.018
+!MESSAGE Missing imported package org.apache.commons.net.nntp_2.2.0.
+
+!ENTRY org.eclipse.osgi 2 0 2013-02-27 11:16:37.044
+!MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2013-02-27 11:16:37.044
+!MESSAGE Bundle weiboFetchAPIBundle_1.0.0.qualifier [33] was not resolved.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:16:37.045
+!MESSAGE Missing imported package weibo4j_0.0.0.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:16:37.046
+!MESSAGE Missing imported package weibo4j.examples.oauth2_0.0.0.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:16:37.046
+!MESSAGE Missing imported package weibo4j.http_0.0.0.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:16:37.047
+!MESSAGE Missing imported package weibo4j.model_0.0.0.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:16:37.047
+!MESSAGE Missing imported package weibo4j.util_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2013-02-27 11:16:37.048
+!MESSAGE Bundle weibo4j-oauth2_1.0.0.qualifier [38] was not resolved.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.048
+!MESSAGE Missing imported package org.apache.commons.collections_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.049
+!MESSAGE Missing imported package org.apache.commons.collections.bag_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.050
+!MESSAGE Missing imported package org.apache.commons.collections.bidimap_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.050
+!MESSAGE Missing imported package org.apache.commons.collections.buffer_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.051
+!MESSAGE Missing imported package org.apache.commons.collections.collection_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.051
+!MESSAGE Missing imported package org.apache.commons.collections.comparators_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.052
+!MESSAGE Missing imported package org.apache.commons.collections.functors_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.052
+!MESSAGE Missing imported package org.apache.commons.collections.iterators_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.053
+!MESSAGE Missing imported package org.apache.commons.collections.keyvalue_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.054
+!MESSAGE Missing imported package org.apache.commons.collections.list_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.054
+!MESSAGE Missing imported package org.apache.commons.collections.map_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.055
+!MESSAGE Missing imported package org.apache.commons.collections.set_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.055
+!MESSAGE Missing imported package org.apache.commons.discovery_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.056
+!MESSAGE Missing imported package org.apache.commons.discovery.ant_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.056
+!MESSAGE Missing imported package org.apache.commons.discovery.jdk_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.057
+!MESSAGE Missing imported package org.apache.commons.discovery.log_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.057
+!MESSAGE Missing imported package org.apache.commons.discovery.resource_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.058
+!MESSAGE Missing imported package org.apache.commons.discovery.resource.classes_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.059
+!MESSAGE Missing imported package org.apache.commons.discovery.resource.names_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.060
+!MESSAGE Missing imported package org.apache.commons.discovery.tools_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.060
+!MESSAGE Missing imported package org.apache.commons.net_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.061
+!MESSAGE Missing imported package org.apache.commons.net.bsd_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.062
+!MESSAGE Missing imported package org.apache.commons.net.chargen_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.062
+!MESSAGE Missing imported package org.apache.commons.net.daytime_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.063
+!MESSAGE Missing imported package org.apache.commons.net.discard_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.063
+!MESSAGE Missing imported package org.apache.commons.net.echo_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.064
+!MESSAGE Missing imported package org.apache.commons.net.finger_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.065
+!MESSAGE Missing imported package org.apache.commons.net.ftp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.065
+!MESSAGE Missing imported package org.apache.commons.net.ftp.parser_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.066
+!MESSAGE Missing imported package org.apache.commons.net.io_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.066
+!MESSAGE Missing imported package org.apache.commons.net.nntp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.067
+!MESSAGE Missing imported package org.apache.commons.net.ntp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.067
+!MESSAGE Missing imported package org.apache.commons.net.pop3_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.068
+!MESSAGE Missing imported package org.apache.commons.net.smtp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.068
+!MESSAGE Missing imported package org.apache.commons.net.telnet_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.069
+!MESSAGE Missing imported package org.apache.commons.net.tftp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.070
+!MESSAGE Missing imported package org.apache.commons.net.time_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.070
+!MESSAGE Missing imported package org.apache.commons.net.util_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:16:37.071
+!MESSAGE Missing imported package org.apache.commons.net.whois_2.2.0.

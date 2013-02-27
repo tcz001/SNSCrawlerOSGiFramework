@@ -1,0 +1,52 @@
+package fetch.api.service.user;
+
+import java.util.Hashtable;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.util.tracker.ServiceTracker;
+
+public class Activator implements BundleActivator {
+
+	private ServiceTracker simpleCrawlerServiceTracker;
+	private CrawlerService simpleLogService;
+	
+	/*
+	 * (non-Javadoc)
+	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
+	 */
+	public void start(BundleContext context) throws Exception {
+		// register the service
+		context.registerService(
+				CrawlerService.class.getName(), 
+				new SimpleCrawlerServiceImpl(), 
+				new Hashtable());
+		
+		// create a tracker and track the log service
+		simpleCrawlerServiceTracker = 
+			new ServiceTracker(context, CrawlerService.class.getName(), null);
+		simpleCrawlerServiceTracker.open();
+		
+		// grab the service
+		simpleLogService = (CrawlerService) simpleCrawlerServiceTracker.getService();
+
+		if(simpleLogService != null)
+			simpleLogService.log("Yee ha, I'm logging!");
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 */
+	public void stop(BundleContext context) throws Exception {
+		if(simpleLogService != null)
+			simpleLogService.log("Yee ha, I'm logging!");
+		
+		// close the service tracker
+		simpleCrawlerServiceTracker.close();
+		simpleCrawlerServiceTracker = null;
+		
+		simpleLogService = null;
+	}
+
+}

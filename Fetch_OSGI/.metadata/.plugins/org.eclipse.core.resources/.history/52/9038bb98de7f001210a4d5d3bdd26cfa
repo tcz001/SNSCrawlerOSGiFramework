@@ -1,0 +1,8 @@
+package fetch.api.oauth;
+
+import weibo4j.Trend;
+import weibo4j.examples.*;;
+
+public class OAuthimpl {
+	
+}

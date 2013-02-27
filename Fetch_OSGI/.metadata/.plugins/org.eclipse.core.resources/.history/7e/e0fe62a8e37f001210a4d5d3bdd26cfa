@@ -1,0 +1,7 @@
+package fetch.api.service.impl;
+
+import weibo4j.examples.oauth2.*;;
+
+public class OAuthimpl {
+	OAuth4Code OAuth = new OAuth4Code();
+}

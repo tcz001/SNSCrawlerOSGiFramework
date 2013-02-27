@@ -1,0 +1,54 @@
+package fetch.api.service.impl;
+
+import java.io.IOException;
+import java.util.List;
+
+import weibo4j.Trend;
+import weibo4j.examples.oauth2.Log;
+import weibo4j.model.UserTrend;
+import weibo4j.model.WeiboException;
+
+public class GetTrendimpl {
+	OAuthimpl oAuthimpl;
+	public GetTrendimpl(String uid) {
+		oAuthimpl = new OAuthimpl();
+		String access_token = null;
+		try {
+			access_token = OAuthimpl.getAccessToken().getAccessToken();
+		} catch (WeiboException | IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		Trend tm = new Trend();
+		tm.client.setToken(access_token);
+		List<UserTrend> trends = null;
+		try {
+			trends = tm.getTrends(uid);
+			for(UserTrend t : trends){
+				Log.logInfo(t.toString());
+			}
+		} catch (WeiboException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void main(String[] args) {
+		String access_token = null;
+		try {
+			access_token = OAuthimpl.getAccessToken().getAccessToken();
+		} catch (WeiboException | IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		Trend tm = new Trend();
+		tm.client.setToken(access_token);
+		List<UserTrend> trends = null;
+		try {
+			trends = tm.getTrends(args[0]);
+			for(UserTrend t : trends){
+				Log.logInfo(t.toString());
+			}
+		} catch (WeiboException e) {
+			e.printStackTrace();
+		}
+	}
+}

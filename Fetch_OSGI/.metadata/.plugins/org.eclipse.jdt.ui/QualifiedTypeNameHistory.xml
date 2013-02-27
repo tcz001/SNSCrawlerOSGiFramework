@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="weibo4j.Weibo"/>
+<fullyQualifiedTypeName name="weibo4j.Trend"/>
+<fullyQualifiedTypeName name="fetch.api.service.impl.OAuth"/>
+<fullyQualifiedTypeName name="weibo4j.examples.oauth2.OAuth4Code"/>
+<fullyQualifiedTypeName name="weibo4j.model.Trend"/>
+<fullyQualifiedTypeName name="weibo4j.model.UserTrend"/>
+<fullyQualifiedTypeName name="weibo4j.http.AccessToken"/>
+<fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+<fullyQualifiedTypeName name="weibo4j.http.HttpClient"/>
+<fullyQualifiedTypeName name="weibo4j.Timeline"/>
+<fullyQualifiedTypeName name="fetch.api.service.impl.WeiboFriendsTimelineCrawlerServiceImpl"/>
+<fullyQualifiedTypeName name="weibo4j.examples.oauth2.Log"/>
+<fullyQualifiedTypeName name="fetch.api.service.user.CrawlerService"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="weibo4j.model.Status"/>
+<fullyQualifiedTypeName name="fetch.api.service.impl.OAuthimpl"/>
+</qualifiedTypeNameHistroy>

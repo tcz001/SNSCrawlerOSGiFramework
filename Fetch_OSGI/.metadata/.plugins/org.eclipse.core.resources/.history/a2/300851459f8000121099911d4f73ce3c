@@ -1,0 +1,44 @@
+package fetch.api.service.impl;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import fetch.api.service.user.CrawlerService;
+
+import weibo4j.Oauth;
+import weibo4j.Timeline;
+import weibo4j.http.AccessToken;
+import weibo4j.model.Status;
+import weibo4j.model.StatusWapper;
+import weibo4j.model.WeiboException;
+import weibo4j.util.BareBonesBrowserLaunch;
+
+public class WeiboUserTimelineCrawlerServiceImpl implements CrawlerService {
+
+	@Override
+	public void fetch() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void log() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void askOAuthCode() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void askOAuthToken() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

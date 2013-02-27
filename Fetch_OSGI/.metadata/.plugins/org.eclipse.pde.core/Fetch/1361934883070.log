@@ -1,0 +1,1634 @@
+!SESSION 2013-02-27 11:14:42.821 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_15
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=zh_CN
+Command-line arguments:  -dev file:/home/tcz/Fetch_OSGI/.metadata/.plugins/org.eclipse.pde.core/Fetch/dev.properties -os linux -ws gtk -arch x86 -consoleLog -console
+
+!ENTRY weiboFetchAPIBundle 4 0 2013-02-27 11:14:43.622
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "weiboFetchAPIBundle_1.0.0.qualifier [33]" could not be resolved. Reason: Missing Constraint: Import-Package: weibo4j; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY weibo4j-oauth2 4 0 2013-02-27 11:14:43.625
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "weibo4j-oauth2_1.0.0.qualifier [37]" could not be resolved. Reason: Missing Constraint: Import-Package: org.apache.axis; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 4 0 2013-02-27 11:14:43.631
+!MESSAGE Bundle initial@reference:file:../../../../home/tcz/Fetch_OSGI/weibo4j-oauth2/ was not resolved.
+
+!ENTRY org.eclipse.osgi 4 0 2013-02-27 11:14:43.632
+!MESSAGE Bundle initial@reference:file:../../../../home/tcz/Fetch_OSGI/weiboFetchAPIBundle/ was not resolved.
+
+!ENTRY org.eclipse.osgi 2 0 2013-02-27 11:14:43.783
+!MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2013-02-27 11:14:43.784
+!MESSAGE Bundle initial@reference:file:../../../../home/tcz/Fetch_OSGI/weibo4j-oauth2/ was not resolved.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.784
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.785
+!MESSAGE Missing imported package org.apache.lucene_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.785
+!MESSAGE Missing imported package org.apache.xerces.impl.io_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.786
+!MESSAGE Missing imported package org.apache.xmlrpc.client.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.786
+!MESSAGE Missing imported package org.apache.lucene.analysis.ru_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.786
+!MESSAGE Missing imported package org.apache.velocity.runtime.log_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.787
+!MESSAGE Missing imported package org.apache.xml.serialize_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.787
+!MESSAGE Missing imported package org.apache.xpath_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.787
+!MESSAGE Missing imported package org.apache.batik.css.engine.value.svg_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.788
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.perforce_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.788
+!MESSAGE Missing imported package org.apache.axis.components.threadpool_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.789
+!MESSAGE Missing imported package org.apache.axis.handlers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.789
+!MESSAGE Missing imported package org.apache.ws.commons.util_1.0.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.789
+!MESSAGE Missing imported package org.apache.xalan.xsltc.runtime_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.790
+!MESSAGE Missing imported package org.apache.axis.attachments_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.790
+!MESSAGE Missing imported package org.apache.xerces.xs.datatypes_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.790
+!MESSAGE Missing imported package org.apache.lucene.analysis.tokenattributes_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.791
+!MESSAGE Missing imported package org.apache.lucene.store_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.791
+!MESSAGE Missing imported package org.apache.lucene.analysis.compound.hyphenation_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.792
+!MESSAGE Missing imported package org.apache.xerces.jaxp.validation_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.792
+!MESSAGE Missing imported package org.apache.velocity.runtime_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.792
+!MESSAGE Missing imported package org.apache.xalan.res_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.793
+!MESSAGE Missing imported package org.apache.xerces.impl.dtd.models_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.793
+!MESSAGE Missing imported package org.apache.commons.net.nntp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.794
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.windows_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.794
+!MESSAGE Missing imported package org.apache.xerces.impl.xpath.regex_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.794
+!MESSAGE Missing imported package org.apache.commons.net.tftp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.795
+!MESSAGE Missing imported package org.apache.commons.collections.list_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.795
+!MESSAGE Missing imported package org.apache.batik.util.gui_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.795
+!MESSAGE Missing imported package org.apache.wsil.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.796
+!MESSAGE Missing imported package org.apache.commons.collections.comparators_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.796
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.email_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.797
+!MESSAGE Missing imported package org.apache.xmlrpc_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.797
+!MESSAGE Missing imported package org.apache.axis.transport.local_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.797
+!MESSAGE Missing imported package org.apache.lucene.queryParser_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.798
+!MESSAGE Missing imported package org.apache.axis.providers.java_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.798
+!MESSAGE Missing imported package org.apache.batik.util_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.798
+!MESSAGE Missing imported package org.apache.commons.net.ftp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.799
+!MESSAGE Missing imported package org.apache.axis_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.799
+!MESSAGE Missing imported package org.apache.lucene.messages_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.800
+!MESSAGE Missing imported package org.apache.lucene.analysis.reverse_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.800
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.depend.constantpool_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.800
+!MESSAGE Missing imported package org.apache.axis.tools.ant.foreach_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.801
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.pvcs_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.801
+!MESSAGE Missing imported package org.apache.tools.ant.types.mappers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.801
+!MESSAGE Missing imported package org.apache.velocity.runtime.parser.node_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.802
+!MESSAGE Missing imported package org.apache.axis.encoding_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.802
+!MESSAGE Missing imported package org.apache.lucene.analysis.position_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.803
+!MESSAGE Missing imported package org.apache.axis.tools.ant.axis_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.803
+!MESSAGE Missing imported package org.apache.axis.soap_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.803
+!MESSAGE Missing imported package org.apache.commons.net.util_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.803
+!MESSAGE Missing imported package org.apache.xerces.jaxp_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.804
+!MESSAGE Missing imported package org.apache.tools.ant.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.804
+!MESSAGE Missing imported package org.apache.xml.utils.res_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.804
+!MESSAGE Missing imported package org.apache.jasper.resources_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.805
+!MESSAGE Missing imported package org.apache.xalan.transformer_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.805
+!MESSAGE Missing imported package org.apache.xml.serializer_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.805
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.sos_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.806
+!MESSAGE Missing imported package org.apache.geronimo.activation.handlers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.806
+!MESSAGE Missing imported package org.apache.tools.ant.util.regexp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.806
+!MESSAGE Missing imported package org.apache.commons.collections.keyvalue_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.807
+!MESSAGE Missing imported package org.apache.velocity.texen.defaults_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.807
+!MESSAGE Missing imported package org.apache.xmlrpc.server_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.807
+!MESSAGE Missing imported package org.apache.tools.ant_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.808
+!MESSAGE Missing imported package org.apache.commons.discovery.resource.names_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.808
+!MESSAGE Missing imported package org.apache.tools.ant.launch_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.808
+!MESSAGE Missing imported package org.apache.xerces.dom3.as_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.809
+!MESSAGE Missing imported package org.apache.batik.util.resources_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.809
+!MESSAGE Missing imported package org.apache.xerces.util_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.809
+!MESSAGE Missing imported package org.apache.tools.ant.util.depend_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.810
+!MESSAGE Missing imported package org.apache.lucene.demo.html_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.810
+!MESSAGE Missing imported package org.apache.xml.resolver_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.810
+!MESSAGE Missing imported package org.apache.commons.net_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.810
+!MESSAGE Missing imported package org.apache.tools.tar_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.810
+!MESSAGE Missing imported package org.apache.axis.i18n_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.811
+!MESSAGE Missing imported package org.apache.axis.wsdl.symbolTable_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.811
+!MESSAGE Missing imported package org.apache.xml.dtm.ref.sax2dtm_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.811
+!MESSAGE Missing imported package org.apache.lucene.analysis.fa_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.811
+!MESSAGE Missing imported package org.apache.xerces.parsers_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.811
+!MESSAGE Missing imported package org.apache.commons.discovery_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.812
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.extension_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.812
+!MESSAGE Missing imported package org.apache.velocity.texen.ant_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.812
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.models_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.813
+!MESSAGE Missing imported package org.apache.axis.encoding.ser_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.813
+!MESSAGE Missing imported package org.apache.axis.configuration_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.813
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.traversers_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.814
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.condition_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.814
+!MESSAGE Missing imported package org.apache.batik.css.dom_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.814
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.jlink_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.815
+!MESSAGE Missing imported package org.apache.commons.net.echo_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.815
+!MESSAGE Missing imported package org.apache.xerces.impl.dv.xs_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.815
+!MESSAGE Missing imported package org.apache.xerces.xpointer_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.815
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.net_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.815
+!MESSAGE Missing imported package org.apache.axis.security.servlet_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.816
+!MESSAGE Missing imported package org.apache.xalan.xsltc.compiler.util_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.816
+!MESSAGE Missing imported package org.apache.axis.server_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.816
+!MESSAGE Missing imported package org.apache.xalan.lib.sql_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.816
+!MESSAGE Missing imported package org.apache.axis.utils.cache_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.816
+!MESSAGE Missing imported package org.apache.geronimo.javamail.authentication_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.817
+!MESSAGE Missing imported package org.apache.axis.session_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.817
+!MESSAGE Missing imported package org.apache.commons.discovery.tools_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.817
+!MESSAGE Missing imported package org.apache.commons.net.time_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.818
+!MESSAGE Missing imported package org.apache.xerces.impl.xpath_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.818
+!MESSAGE Missing imported package org.apache.lucene.search.spans_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.818
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.pop3.response_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.818
+!MESSAGE Missing imported package org.apache.commons.net.ntp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.819
+!MESSAGE Missing imported package org.apache.env_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.819
+!MESSAGE Missing imported package org.apache.xerces.dom.events_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.819
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.sound_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.820
+!MESSAGE Missing imported package org.apache.commons.net.chargen_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.820
+!MESSAGE Missing imported package org.apache.commons.collections.functors_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.820
+!MESSAGE Missing imported package org.apache.tools.zip_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.821
+!MESSAGE Missing imported package org.apache.lucene.analysis.cz_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.821
+!MESSAGE Missing imported package org.apache.xerces.impl.dv.dtd_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.821
+!MESSAGE Missing imported package org.apache.batik.util.gui.resource_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.822
+!MESSAGE Missing imported package org.apache.geronimo.javamail.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.822
+!MESSAGE Missing imported package org.apache.lucene.analysis.miscellaneous_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.822
+!MESSAGE Missing imported package org.apache.batik.css.parser_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.823
+!MESSAGE Missing imported package org.apache.xml.resolver.apps_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.823
+!MESSAGE Missing imported package org.apache.geronimo.javamail.transport.nntp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.823
+!MESSAGE Missing imported package org.apache.velocity.runtime.defaults_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.823
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.testing_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.823
+!MESSAGE Missing imported package org.apache.tools.ant.util.optional_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.824
+!MESSAGE Missing imported package org.apache.commons.collections.bag_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.824
+!MESSAGE Missing imported package org.apache.jasper.runtime_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.824
+!MESSAGE Missing imported package org.apache.xerces.impl.xs_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.824
+!MESSAGE Missing imported package org.apache.axis.types_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.825
+!MESSAGE Missing imported package org.apache.axis.client.async_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.825
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.depend_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.825
+!MESSAGE Missing imported package org.apache.batik.util.io_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.825
+!MESSAGE Missing imported package org.apache.lucene.analysis.el_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.825
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.826
+!MESSAGE Missing imported package org.apache.xml.resolver.readers_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.826
+!MESSAGE Missing imported package org.apache.lucene.analysis.sinks_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.826
+!MESSAGE Missing imported package org.apache.axis.wsdl.toJava_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.826
+!MESSAGE Missing imported package org.apache.axis.transport.jms_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.826
+!MESSAGE Missing imported package org.apache.xerces.jaxp.datatype_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.827
+!MESSAGE Missing imported package org.apache.xerces.dom_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.827
+!MESSAGE Missing imported package org.apache.commons.discovery.log_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.827
+!MESSAGE Missing imported package org.apache.commons.net.ftp.parser_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.827
+!MESSAGE Missing imported package org.apache.commons.collections.bidimap_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.827
+!MESSAGE Missing imported package org.apache.velocity.runtime.parser_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.828
+!MESSAGE Missing imported package org.apache.axis.utils_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.828
+!MESSAGE Missing imported package org.apache.tools.ant.util.java15_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.828
+!MESSAGE Missing imported package org.apache.velocity_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.828
+!MESSAGE Missing imported package org.apache.xml.serializer.dom3_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.829
+!MESSAGE Missing imported package org.apache.xerces.impl.validation_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.829
+!MESSAGE Missing imported package org.apache.axis.components.jms_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.830
+!MESSAGE Missing imported package org.apache.xmlrpc.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.830
+!MESSAGE Missing imported package org.apache.axis.holders_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.831
+!MESSAGE Missing imported package org.apache.axis.components.image_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.831
+!MESSAGE Missing imported package org.apache.tools.ant.types.resources.comparators_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.831
+!MESSAGE Missing imported package org.apache.xerces.impl.dv_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.832
+!MESSAGE Missing imported package org.apache.axis.transport.mail_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.832
+!MESSAGE Missing imported package org.apache.bcel.verifier.statics_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.834
+!MESSAGE Missing imported package org.apache.velocity.runtime.resource_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.835
+!MESSAGE Missing imported package org.apache.tools.mail_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.836
+!MESSAGE Missing imported package org.apache.xerces.xni.grammars_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.836
+!MESSAGE Missing imported package org.apache.xerces.xni_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.837
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.ejb_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.838
+!MESSAGE Missing imported package org.apache.lucene.analysis.shingle_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.838
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.util_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.839
+!MESSAGE Missing imported package org.apache.tools.ant.input_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.840
+!MESSAGE Missing imported package org.apache.commons.net.whois_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.840
+!MESSAGE Missing imported package org.apache.axis.components.net_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.841
+!MESSAGE Missing imported package org.apache.velocity.runtime.visitor_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.841
+!MESSAGE Missing imported package org.apache.ws.commons.serialize_1.0.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.842
+!MESSAGE Missing imported package org.apache.xmlrpc.metadata_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.842
+!MESSAGE Missing imported package org.apache.axis.components.script_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.842
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.identity_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.842
+!MESSAGE Missing imported package org.apache.geronimo.javamail.transport.smtp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.843
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.jsp.compilers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.843
+!MESSAGE Missing imported package org.apache.tools.ant.types.resources.selectors_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.843
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.pop3_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.844
+!MESSAGE Missing imported package org.apache.xmlrpc.client_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.844
+!MESSAGE Missing imported package org.apache.tools.ant.dispatch_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.844
+!MESSAGE Missing imported package org.apache.axis.handlers.http_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.844
+!MESSAGE Missing imported package org.apache.velocity.anakia_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.845
+!MESSAGE Missing imported package org.apache.xalan.templates_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.845
+!MESSAGE Missing imported package org.apache.velocity.util_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.845
+!MESSAGE Missing imported package org.apache.axis.components.encoding_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.846
+!MESSAGE Missing imported package org.apache.tools.ant.types_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.846
+!MESSAGE Missing imported package org.apache.axis.utils.bytecode_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.846
+!MESSAGE Missing imported package org.apache.xml.resolver.tools_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.846
+!MESSAGE Missing imported package org.apache.felix.scr_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.847
+!MESSAGE Missing imported package org.apache.wsil.client_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.847
+!MESSAGE Missing imported package org.apache.batik.i18n_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.847
+!MESSAGE Missing imported package org.apache.commons.net.discard_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.848
+!MESSAGE Missing imported package org.apache.jasper.compiler.tagplugin_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.848
+!MESSAGE Missing imported package org.apache.wsil.xml_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.848
+!MESSAGE Missing imported package org.apache.batik_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.849
+!MESSAGE Missing imported package org.apache.xpath.res_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.849
+!MESSAGE Missing imported package org.apache.commons.net.finger_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.850
+!MESSAGE Missing imported package org.apache.xerces.impl.dv.util_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.850
+!MESSAGE Missing imported package org.apache.xerces.impl.msg_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.851
+!MESSAGE Missing imported package org.apache.commons.collections_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.851
+!MESSAGE Missing imported package org.apache.batik.css.engine.sac_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.851
+!MESSAGE Missing imported package org.apache.xalan.processor_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.851
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.script_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.851
+!MESSAGE Missing imported package org.apache.html.dom_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.852
+!MESSAGE Missing imported package org.apache.felix.service.threadio_0.8.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.852
+!MESSAGE Missing imported package org.apache.velocity.convert_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.852
+!MESSAGE Missing imported package org.apache.felix.service.command_0.8.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.852
+!MESSAGE Missing imported package org.apache.axis.wsdl.fromJava_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.852
+!MESSAGE Missing imported package org.apache.axis.collections_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.853
+!MESSAGE Missing imported package org.apache.commons.collections.collection_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.853
+!MESSAGE Missing imported package org.apache.xalan.xsltc_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.853
+!MESSAGE Missing imported package org.apache.tools.ant.types.spi_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.853
+!MESSAGE Missing imported package org.apache.xmlrpc.webserver_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.853
+!MESSAGE Missing imported package org.apache.xpath.compiler_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.854
+!MESSAGE Missing imported package org.apache.tools.ant.listener_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.854
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.javacc_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.854
+!MESSAGE Missing imported package org.apache.lucene.analysis.compound_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.854
+!MESSAGE Missing imported package org.apache.jasper_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.854
+!MESSAGE Missing imported package org.apache.commons.collections.set_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.855
+!MESSAGE Missing imported package org.apache.xalan.trace_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.855
+!MESSAGE Missing imported package org.apache.axis.wsdl.gen_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.855
+!MESSAGE Missing imported package org.apache.xpath.domapi_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.855
+!MESSAGE Missing imported package org.apache.axis.security_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.855
+!MESSAGE Missing imported package org.apache.tools.ant.types.optional.image_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.856
+!MESSAGE Missing imported package org.apache.velocity.app.event.implement_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.856
+!MESSAGE Missing imported package org.apache.lucene.document_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.856
+!MESSAGE Missing imported package org.apache.velocity.io_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.856
+!MESSAGE Missing imported package org.apache.bcel.classfile_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.856
+!MESSAGE Missing imported package org.apache.lucene.search.payloads_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.857
+!MESSAGE Missing imported package org.apache.jasper.security_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.857
+!MESSAGE Missing imported package org.apache.commons.discovery.ant_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.857
+!MESSAGE Missing imported package org.apache.bcel.verifier.exc_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.857
+!MESSAGE Missing imported package org.apache.axis.management_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.857
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.splash_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.858
+!MESSAGE Missing imported package org.apache.xpath.objects_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.858
+!MESSAGE Missing imported package org.apache.xalan.xsltc.trax_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.858
+!MESSAGE Missing imported package org.apache.commons.discovery.jdk_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.858
+!MESSAGE Missing imported package org.apache.velocity.app.tools_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.858
+!MESSAGE Missing imported package org.apache.axis.deployment.wsdd_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.859
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.nntp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.859
+!MESSAGE Missing imported package org.apache.xpath.axes_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.859
+!MESSAGE Missing imported package org.apache.geronimo.mail.handlers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.859
+!MESSAGE Missing imported package org.apache.tools.bzip2_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.859
+!MESSAGE Missing imported package org.apache.xml.resolver.etc_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.860
+!MESSAGE Missing imported package org.apache.xmlrpc.jaxb_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.860
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.image_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.860
+!MESSAGE Missing imported package org.apache.wml_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.860
+!MESSAGE Missing imported package org.apache.lucene.search.function_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.860
+!MESSAGE Missing imported package org.apache.geronimo.mail.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.861
+!MESSAGE Missing imported package org.apache.xpath.patterns_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.861
+!MESSAGE Missing imported package org.apache.xerces.impl_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.861
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.compilers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.862
+!MESSAGE Missing imported package org.apache.axis.monitor_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.862
+!MESSAGE Missing imported package org.apache.xerces.xinclude_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.862
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.extension.resolvers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.862
+!MESSAGE Missing imported package org.apache.commons.discovery.resource.classes_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.863
+!MESSAGE Missing imported package org.apache.xml.res_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.863
+!MESSAGE Missing imported package org.apache.xml.dtm.ref_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.863
+!MESSAGE Missing imported package org.apache.xalan_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.864
+!MESSAGE Missing imported package org.apache.velocity.texen_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.864
+!MESSAGE Missing imported package org.apache.batik.css.engine.value_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.864
+!MESSAGE Missing imported package org.apache.xmlcommons_1.3.4.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.865
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.rmic_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.865
+!MESSAGE Missing imported package org.apache.commons.collections.map_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.865
+!MESSAGE Missing imported package org.apache.axis.strategies_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.865
+!MESSAGE Missing imported package org.apache.axis.client_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.866
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.javah_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.866
+!MESSAGE Missing imported package org.apache.xalan.lib_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.866
+!MESSAGE Missing imported package org.apache.commons.discovery.resource_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.867
+!MESSAGE Missing imported package org.apache.xml.dtm.ref.dom2dtm_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.867
+!MESSAGE Missing imported package org.apache.axis.transport.java_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.867
+!MESSAGE Missing imported package org.apache.wsil.extension_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.867
+!MESSAGE Missing imported package org.apache.axis.components.logger_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.868
+!MESSAGE Missing imported package org.apache.commons.collections.iterators_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.868
+!MESSAGE Missing imported package org.apache.xerces.impl.dtd_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.868
+!MESSAGE Missing imported package org.apache.lucene.analysis.de_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.868
+!MESSAGE Missing imported package org.apache.jasper.servlet_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.869
+!MESSAGE Missing imported package org.apache.axis.components.compiler_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.869
+!MESSAGE Missing imported package org.apache.axis.encoding.ser.castor_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.869
+!MESSAGE Missing imported package org.apache.wml.dom_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.869
+!MESSAGE Missing imported package org.apache.axis.providers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.870
+!MESSAGE Missing imported package org.apache.xalan.xsltc.compiler_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.870
+!MESSAGE Missing imported package org.apache.xml.utils_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.870
+!MESSAGE Missing imported package org.apache.bcel.verifier_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.870
+!MESSAGE Missing imported package org.apache.lucene.analysis.br_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.870
+!MESSAGE Missing imported package org.apache.commons.net.telnet_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.871
+!MESSAGE Missing imported package org.apache.tools.ant.types.resolver_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.871
+!MESSAGE Missing imported package org.apache.lucene.search_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.871
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.clearcase_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.871
+!MESSAGE Missing imported package org.apache.bcel.util_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.871
+!MESSAGE Missing imported package org.apache.xml.dtm_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.871
+!MESSAGE Missing imported package org.apache.tools.ant.types.optional.depend_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.872
+!MESSAGE Missing imported package org.apache.lucene.analysis_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.872
+!MESSAGE Missing imported package org.apache.velocity.runtime.directive_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.872
+!MESSAGE Missing imported package org.apache.velocity.servlet_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.872
+!MESSAGE Missing imported package org.apache.xalan.xsltc.dom_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.872
+!MESSAGE Missing imported package org.apache.xalan.client_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.873
+!MESSAGE Missing imported package org.apache.xalan.xsltc.cmdline.getopt_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.873
+!MESSAGE Missing imported package org.apache.lucene.analysis.nl_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.873
+!MESSAGE Missing imported package org.apache.lucene.analysis.ngram_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.873
+!MESSAGE Missing imported package org.apache.axis.message_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.874
+!MESSAGE Missing imported package org.apache.velocity.exception_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.874
+!MESSAGE Missing imported package org.apache.jasper.compiler_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.874
+!MESSAGE Missing imported package org.apache.wsil.extension.wsdl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.874
+!MESSAGE Missing imported package org.apache.xmlrpc.parser_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.875
+!MESSAGE Missing imported package org.apache.xerces.xs_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.875
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.ssh_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.875
+!MESSAGE Missing imported package org.apache.axis.description_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.876
+!MESSAGE Missing imported package org.apache.jasper.tagplugins.jstl_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.876
+!MESSAGE Missing imported package org.apache.wsil.impl.extension.wsdl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.876
+!MESSAGE Missing imported package org.apache.lucene.analysis.ar_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.876
+!MESSAGE Missing imported package org.apache.commons.net.io_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.876
+!MESSAGE Missing imported package org.apache.tools.ant.loader_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.877
+!MESSAGE Missing imported package org.apache.xalan.xsltc.cmdline_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.877
+!MESSAGE Missing imported package org.apache.lucene.analysis.standard_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.877
+!MESSAGE Missing imported package org.apache.axis.schema_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.877
+!MESSAGE Missing imported package org.apache.wsil.impl.extension_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.878
+!MESSAGE Missing imported package org.apache.xml.resolver.helpers_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.878
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.i18n_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.878
+!MESSAGE Missing imported package org.apache.batik.css.engine.value.svg12_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.878
+!MESSAGE Missing imported package org.apache.wsil.extension.uddi_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.878
+!MESSAGE Missing imported package org.apache.regexp_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.878
+!MESSAGE Missing imported package org.apache.axis.tools.ant.wsdl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.879
+!MESSAGE Missing imported package org.apache.tools.ant.property_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.879
+!MESSAGE Missing imported package org.apache.axis.wsdl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.879
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.nntp.newsrc_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.879
+!MESSAGE Missing imported package org.apache.lucene.analysis.th_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.879
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.unix_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.880
+!MESSAGE Missing imported package org.apache.axis.constants_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.880
+!MESSAGE Missing imported package org.apache.xpath.functions_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.880
+!MESSAGE Missing imported package org.apache.lucene.util.cache_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.880
+!MESSAGE Missing imported package org.apache.tools.ant.util.facade_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.880
+!MESSAGE Missing imported package org.apache.tools.ant.filters_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.880
+!MESSAGE Missing imported package org.apache.axis.enum_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.881
+!MESSAGE Missing imported package org.apache.lucene.util_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.881
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.junit_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.881
+!MESSAGE Missing imported package org.apache.commons.net.pop3_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.881
+!MESSAGE Missing imported package org.apache.batik.css.engine.value.css2_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.882
+!MESSAGE Missing imported package org.apache.xerces.xni.parser_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.882
+!MESSAGE Missing imported package org.apache.xalan.xsltc.runtime.output_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.882
+!MESSAGE Missing imported package org.apache.bcel.verifier.structurals_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.882
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.vss_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.883
+!MESSAGE Missing imported package org.apache.velocity.texen.util_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.883
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.j2ee_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.883
+!MESSAGE Missing imported package org.apache.velocity.app_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.884
+!MESSAGE Missing imported package org.apache.xalan.xsltc.util_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.884
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.opti_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.884
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.cvslib_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.884
+!MESSAGE Missing imported package org.apache.lucene.analysis.query_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.885
+!MESSAGE Missing imported package org.apache.axis.security.simple_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.885
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.native2ascii_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.885
+!MESSAGE Missing imported package org.apache.tools.ant.types.selectors_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.885
+!MESSAGE Missing imported package org.apache.velocity.util.introspection_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.885
+!MESSAGE Missing imported package org.apache.velocity.runtime.resource.loader_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.886
+!MESSAGE Missing imported package org.apache.commons.net.daytime_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.886
+!MESSAGE Missing imported package org.apache.velocity.runtime.resource.util_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.886
+!MESSAGE Missing imported package org.apache.wsil.impl.extension.uddi_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.886
+!MESSAGE Missing imported package org.apache.tools.ant.filters.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.886
+!MESSAGE Missing imported package org.apache.wsil.impl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.887
+!MESSAGE Missing imported package org.apache.commons.net.smtp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.887
+!MESSAGE Missing imported package org.apache.bcel_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.887
+!MESSAGE Missing imported package org.apache.batik.css.engine_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.887
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.pop3.message_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.887
+!MESSAGE Missing imported package org.apache.lucene.analysis.cjk_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.888
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.ccm_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.888
+!MESSAGE Missing imported package org.apache.xalan.xslt_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.888
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.jdepend_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.888
+!MESSAGE Missing imported package org.apache.lucene.index_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.888
+!MESSAGE Missing imported package org.apache.wsil_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.889
+!MESSAGE Missing imported package org.apache.tools.ant.types.resources_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.889
+!MESSAGE Missing imported package org.apache.tools.ant.types.selectors.modifiedselector_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.889
+!MESSAGE Missing imported package org.apache.velocity.context_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.889
+!MESSAGE Missing imported package org.apache.xalan.extensions_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.889
+!MESSAGE Missing imported package org.apache.tools.ant.types.optional_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.890
+!MESSAGE Missing imported package org.apache.tools.ant.helper_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.890
+!MESSAGE Missing imported package org.apache.axis.components.uuid_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.890
+!MESSAGE Missing imported package org.apache.commons.collections.buffer_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.890
+!MESSAGE Missing imported package org.apache.xpath.jaxp_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.890
+!MESSAGE Missing imported package org.apache.axis.transport.http_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.891
+!MESSAGE Missing imported package org.apache.axis.management.jmx_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.891
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.jsp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.891
+!MESSAGE Missing imported package org.apache.axis.deployment.wsdd.providers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.891
+!MESSAGE Missing imported package org.apache.bcel.generic_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.892
+!MESSAGE Missing imported package org.apache.commons.net.bsd_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.892
+!MESSAGE Missing imported package org.apache.axis.handlers.soap_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.892
+!MESSAGE Missing imported package org.apache.xmlrpc.serializer_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.892
+!MESSAGE Missing imported package org.apache.xpath.operations_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.893
+!MESSAGE Missing imported package org.apache.tools.ant.util.depend.bcel_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.893
+!MESSAGE Missing imported package org.apache.lucene.analysis.payloads_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.893
+!MESSAGE Missing imported package org.apache.xmlrpc.common_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.894
+!MESSAGE Missing imported package org.apache.jasper.xmlparser_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.894
+!MESSAGE Missing imported package org.apache.lucene.analysis.cn_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.894
+!MESSAGE Missing imported package org.apache.xalan.serialize_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.894
+!MESSAGE Missing imported package org.apache.velocity.app.event_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.895
+!MESSAGE Missing imported package org.apache.lucene.analysis.fr_2.9.1.
+
+!ENTRY org.eclipse.osgi 2 0 2013-02-27 11:14:43.939
+!MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2013-02-27 11:14:43.939
+!MESSAGE Bundle weiboFetchAPIBundle_1.0.0.qualifier [33] was not resolved.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:14:43.939
+!MESSAGE Missing imported package weibo4j_0.0.0.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:14:43.940
+!MESSAGE Missing imported package weibo4j.examples.oauth2_0.0.0.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:14:43.940
+!MESSAGE Missing imported package weibo4j.http_0.0.0.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:14:43.940
+!MESSAGE Missing imported package weibo4j.model_0.0.0.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:14:43.940
+!MESSAGE Missing imported package weibo4j.util_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2013-02-27 11:14:43.940
+!MESSAGE Bundle weibo4j-oauth2_1.0.0.qualifier [37] was not resolved.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.941
+!MESSAGE Missing imported package org.apache.axis_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.941
+!MESSAGE Missing imported package org.apache.axis.attachments_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.941
+!MESSAGE Missing imported package org.apache.axis.client_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.942
+!MESSAGE Missing imported package org.apache.axis.client.async_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.942
+!MESSAGE Missing imported package org.apache.axis.collections_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.942
+!MESSAGE Missing imported package org.apache.axis.components.compiler_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.943
+!MESSAGE Missing imported package org.apache.axis.components.encoding_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.943
+!MESSAGE Missing imported package org.apache.axis.components.image_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.943
+!MESSAGE Missing imported package org.apache.axis.components.jms_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.943
+!MESSAGE Missing imported package org.apache.axis.components.logger_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.944
+!MESSAGE Missing imported package org.apache.axis.components.net_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.944
+!MESSAGE Missing imported package org.apache.axis.components.script_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.944
+!MESSAGE Missing imported package org.apache.axis.components.threadpool_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.945
+!MESSAGE Missing imported package org.apache.axis.components.uuid_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.945
+!MESSAGE Missing imported package org.apache.axis.configuration_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.945
+!MESSAGE Missing imported package org.apache.axis.constants_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.945
+!MESSAGE Missing imported package org.apache.axis.deployment.wsdd_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.946
+!MESSAGE Missing imported package org.apache.axis.deployment.wsdd.providers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.946
+!MESSAGE Missing imported package org.apache.axis.description_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.946
+!MESSAGE Missing imported package org.apache.axis.encoding_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.947
+!MESSAGE Missing imported package org.apache.axis.encoding.ser_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.947
+!MESSAGE Missing imported package org.apache.axis.encoding.ser.castor_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.947
+!MESSAGE Missing imported package org.apache.axis.enum_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.947
+!MESSAGE Missing imported package org.apache.axis.handlers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.948
+!MESSAGE Missing imported package org.apache.axis.handlers.http_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.948
+!MESSAGE Missing imported package org.apache.axis.handlers.soap_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.948
+!MESSAGE Missing imported package org.apache.axis.holders_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.949
+!MESSAGE Missing imported package org.apache.axis.i18n_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.949
+!MESSAGE Missing imported package org.apache.axis.management_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.949
+!MESSAGE Missing imported package org.apache.axis.management.jmx_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.949
+!MESSAGE Missing imported package org.apache.axis.message_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.950
+!MESSAGE Missing imported package org.apache.axis.monitor_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.950
+!MESSAGE Missing imported package org.apache.axis.providers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.950
+!MESSAGE Missing imported package org.apache.axis.providers.java_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.950
+!MESSAGE Missing imported package org.apache.axis.schema_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.950
+!MESSAGE Missing imported package org.apache.axis.security_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.951
+!MESSAGE Missing imported package org.apache.axis.security.servlet_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.951
+!MESSAGE Missing imported package org.apache.axis.security.simple_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.951
+!MESSAGE Missing imported package org.apache.axis.server_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.952
+!MESSAGE Missing imported package org.apache.axis.session_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.952
+!MESSAGE Missing imported package org.apache.axis.soap_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.952
+!MESSAGE Missing imported package org.apache.axis.strategies_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.952
+!MESSAGE Missing imported package org.apache.axis.tools.ant.axis_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.953
+!MESSAGE Missing imported package org.apache.axis.tools.ant.foreach_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.953
+!MESSAGE Missing imported package org.apache.axis.tools.ant.wsdl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.953
+!MESSAGE Missing imported package org.apache.axis.transport.http_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.954
+!MESSAGE Missing imported package org.apache.axis.transport.java_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.954
+!MESSAGE Missing imported package org.apache.axis.transport.jms_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.954
+!MESSAGE Missing imported package org.apache.axis.transport.local_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.954
+!MESSAGE Missing imported package org.apache.axis.transport.mail_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.955
+!MESSAGE Missing imported package org.apache.axis.types_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.955
+!MESSAGE Missing imported package org.apache.axis.utils_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.955
+!MESSAGE Missing imported package org.apache.axis.utils.bytecode_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.956
+!MESSAGE Missing imported package org.apache.axis.utils.cache_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.956
+!MESSAGE Missing imported package org.apache.axis.wsdl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.956
+!MESSAGE Missing imported package org.apache.axis.wsdl.fromJava_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.957
+!MESSAGE Missing imported package org.apache.axis.wsdl.gen_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.957
+!MESSAGE Missing imported package org.apache.axis.wsdl.symbolTable_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.957
+!MESSAGE Missing imported package org.apache.axis.wsdl.toJava_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.957
+!MESSAGE Missing imported package org.apache.batik_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.958
+!MESSAGE Missing imported package org.apache.batik.css.dom_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.958
+!MESSAGE Missing imported package org.apache.batik.css.engine_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.958
+!MESSAGE Missing imported package org.apache.batik.css.engine.sac_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.959
+!MESSAGE Missing imported package org.apache.batik.css.engine.value_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.959
+!MESSAGE Missing imported package org.apache.batik.css.engine.value.css2_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.959
+!MESSAGE Missing imported package org.apache.batik.css.engine.value.svg_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.960
+!MESSAGE Missing imported package org.apache.batik.css.engine.value.svg12_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.960
+!MESSAGE Missing imported package org.apache.batik.css.parser_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.960
+!MESSAGE Missing imported package org.apache.batik.i18n_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.960
+!MESSAGE Missing imported package org.apache.batik.util_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.961
+!MESSAGE Missing imported package org.apache.batik.util.gui_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.961
+!MESSAGE Missing imported package org.apache.batik.util.gui.resource_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.961
+!MESSAGE Missing imported package org.apache.batik.util.io_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.962
+!MESSAGE Missing imported package org.apache.batik.util.resources_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.962
+!MESSAGE Missing imported package org.apache.bcel_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.962
+!MESSAGE Missing imported package org.apache.bcel.classfile_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.963
+!MESSAGE Missing imported package org.apache.bcel.generic_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.963
+!MESSAGE Missing imported package org.apache.bcel.util_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.963
+!MESSAGE Missing imported package org.apache.bcel.verifier_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.964
+!MESSAGE Missing imported package org.apache.bcel.verifier.exc_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.964
+!MESSAGE Missing imported package org.apache.bcel.verifier.statics_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.964
+!MESSAGE Missing imported package org.apache.bcel.verifier.structurals_5.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.965
+!MESSAGE Missing imported package org.apache.commons.collections_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.965
+!MESSAGE Missing imported package org.apache.commons.collections.bag_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.965
+!MESSAGE Missing imported package org.apache.commons.collections.bidimap_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.966
+!MESSAGE Missing imported package org.apache.commons.collections.buffer_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.966
+!MESSAGE Missing imported package org.apache.commons.collections.collection_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.966
+!MESSAGE Missing imported package org.apache.commons.collections.comparators_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.966
+!MESSAGE Missing imported package org.apache.commons.collections.functors_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.967
+!MESSAGE Missing imported package org.apache.commons.collections.iterators_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.967
+!MESSAGE Missing imported package org.apache.commons.collections.keyvalue_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.967
+!MESSAGE Missing imported package org.apache.commons.collections.list_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.968
+!MESSAGE Missing imported package org.apache.commons.collections.map_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.968
+!MESSAGE Missing imported package org.apache.commons.collections.set_3.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.968
+!MESSAGE Missing imported package org.apache.commons.discovery_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.968
+!MESSAGE Missing imported package org.apache.commons.discovery.ant_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.969
+!MESSAGE Missing imported package org.apache.commons.discovery.jdk_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.969
+!MESSAGE Missing imported package org.apache.commons.discovery.log_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.969
+!MESSAGE Missing imported package org.apache.commons.discovery.resource_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.969
+!MESSAGE Missing imported package org.apache.commons.discovery.resource.classes_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.970
+!MESSAGE Missing imported package org.apache.commons.discovery.resource.names_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.970
+!MESSAGE Missing imported package org.apache.commons.discovery.tools_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.970
+!MESSAGE Missing imported package org.apache.commons.net_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.970
+!MESSAGE Missing imported package org.apache.commons.net.bsd_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.970
+!MESSAGE Missing imported package org.apache.commons.net.chargen_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.971
+!MESSAGE Missing imported package org.apache.commons.net.daytime_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.971
+!MESSAGE Missing imported package org.apache.commons.net.discard_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.971
+!MESSAGE Missing imported package org.apache.commons.net.echo_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.971
+!MESSAGE Missing imported package org.apache.commons.net.finger_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.971
+!MESSAGE Missing imported package org.apache.commons.net.ftp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.971
+!MESSAGE Missing imported package org.apache.commons.net.ftp.parser_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.972
+!MESSAGE Missing imported package org.apache.commons.net.io_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.972
+!MESSAGE Missing imported package org.apache.commons.net.nntp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.972
+!MESSAGE Missing imported package org.apache.commons.net.ntp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.972
+!MESSAGE Missing imported package org.apache.commons.net.pop3_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.972
+!MESSAGE Missing imported package org.apache.commons.net.smtp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.972
+!MESSAGE Missing imported package org.apache.commons.net.telnet_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.973
+!MESSAGE Missing imported package org.apache.commons.net.tftp_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.973
+!MESSAGE Missing imported package org.apache.commons.net.time_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.973
+!MESSAGE Missing imported package org.apache.commons.net.util_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.973
+!MESSAGE Missing imported package org.apache.commons.net.whois_2.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.974
+!MESSAGE Missing imported package org.apache.env_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.974
+!MESSAGE Missing imported package org.apache.felix.scr_1.6.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.974
+!MESSAGE Missing imported package org.apache.felix.service.command_0.8.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.975
+!MESSAGE Missing imported package org.apache.felix.service.threadio_0.8.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.975
+!MESSAGE Missing imported package org.apache.geronimo.activation.handlers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.975
+!MESSAGE Missing imported package org.apache.geronimo.javamail.authentication_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.975
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.nntp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.976
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.nntp.newsrc_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.976
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.pop3_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.976
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.pop3.message_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.976
+!MESSAGE Missing imported package org.apache.geronimo.javamail.store.pop3.response_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.977
+!MESSAGE Missing imported package org.apache.geronimo.javamail.transport.nntp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.977
+!MESSAGE Missing imported package org.apache.geronimo.javamail.transport.smtp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.977
+!MESSAGE Missing imported package org.apache.geronimo.javamail.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.977
+!MESSAGE Missing imported package org.apache.geronimo.mail.handlers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.978
+!MESSAGE Missing imported package org.apache.geronimo.mail.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.978
+!MESSAGE Missing imported package org.apache.html.dom_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.978
+!MESSAGE Missing imported package org.apache.jasper_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.979
+!MESSAGE Missing imported package org.apache.jasper.compiler_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.979
+!MESSAGE Missing imported package org.apache.jasper.compiler.tagplugin_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.979
+!MESSAGE Missing imported package org.apache.jasper.resources_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.979
+!MESSAGE Missing imported package org.apache.jasper.runtime_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.980
+!MESSAGE Missing imported package org.apache.jasper.security_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.980
+!MESSAGE Missing imported package org.apache.jasper.servlet_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.981
+!MESSAGE Missing imported package org.apache.jasper.tagplugins.jstl_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.981
+!MESSAGE Missing imported package org.apache.jasper.xmlparser_2.2.2.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.982
+!MESSAGE Missing imported package org.apache.lucene_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.982
+!MESSAGE Missing imported package org.apache.lucene.analysis_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.983
+!MESSAGE Missing imported package org.apache.lucene.analysis.ar_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.983
+!MESSAGE Missing imported package org.apache.lucene.analysis.br_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.984
+!MESSAGE Missing imported package org.apache.lucene.analysis.cjk_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.985
+!MESSAGE Missing imported package org.apache.lucene.analysis.cn_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.985
+!MESSAGE Missing imported package org.apache.lucene.analysis.compound_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.986
+!MESSAGE Missing imported package org.apache.lucene.analysis.compound.hyphenation_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.986
+!MESSAGE Missing imported package org.apache.lucene.analysis.cz_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.986
+!MESSAGE Missing imported package org.apache.lucene.analysis.de_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.986
+!MESSAGE Missing imported package org.apache.lucene.analysis.el_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.986
+!MESSAGE Missing imported package org.apache.lucene.analysis.fa_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.987
+!MESSAGE Missing imported package org.apache.lucene.analysis.fr_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.987
+!MESSAGE Missing imported package org.apache.lucene.analysis.miscellaneous_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.987
+!MESSAGE Missing imported package org.apache.lucene.analysis.ngram_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.987
+!MESSAGE Missing imported package org.apache.lucene.analysis.nl_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.987
+!MESSAGE Missing imported package org.apache.lucene.analysis.payloads_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.987
+!MESSAGE Missing imported package org.apache.lucene.analysis.position_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.988
+!MESSAGE Missing imported package org.apache.lucene.analysis.query_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.988
+!MESSAGE Missing imported package org.apache.lucene.analysis.reverse_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.988
+!MESSAGE Missing imported package org.apache.lucene.analysis.ru_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.988
+!MESSAGE Missing imported package org.apache.lucene.analysis.shingle_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.988
+!MESSAGE Missing imported package org.apache.lucene.analysis.sinks_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.989
+!MESSAGE Missing imported package org.apache.lucene.analysis.standard_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.989
+!MESSAGE Missing imported package org.apache.lucene.analysis.th_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.989
+!MESSAGE Missing imported package org.apache.lucene.analysis.tokenattributes_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.989
+!MESSAGE Missing imported package org.apache.lucene.demo.html_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.989
+!MESSAGE Missing imported package org.apache.lucene.document_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.989
+!MESSAGE Missing imported package org.apache.lucene.index_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.990
+!MESSAGE Missing imported package org.apache.lucene.messages_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.990
+!MESSAGE Missing imported package org.apache.lucene.queryParser_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.990
+!MESSAGE Missing imported package org.apache.lucene.search_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.990
+!MESSAGE Missing imported package org.apache.lucene.search.function_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.991
+!MESSAGE Missing imported package org.apache.lucene.search.payloads_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.991
+!MESSAGE Missing imported package org.apache.lucene.search.spans_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.991
+!MESSAGE Missing imported package org.apache.lucene.store_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.991
+!MESSAGE Missing imported package org.apache.lucene.util_1.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.992
+!MESSAGE Missing imported package org.apache.lucene.util.cache_2.9.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.992
+!MESSAGE Missing imported package org.apache.regexp_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.992
+!MESSAGE Missing imported package org.apache.tools.ant_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.993
+!MESSAGE Missing imported package org.apache.tools.ant.dispatch_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.993
+!MESSAGE Missing imported package org.apache.tools.ant.filters_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.993
+!MESSAGE Missing imported package org.apache.tools.ant.filters.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.993
+!MESSAGE Missing imported package org.apache.tools.ant.helper_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.993
+!MESSAGE Missing imported package org.apache.tools.ant.input_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.993
+!MESSAGE Missing imported package org.apache.tools.ant.launch_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.994
+!MESSAGE Missing imported package org.apache.tools.ant.listener_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.994
+!MESSAGE Missing imported package org.apache.tools.ant.loader_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.994
+!MESSAGE Missing imported package org.apache.tools.ant.property_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.994
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.994
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.compilers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.995
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.condition_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.995
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.cvslib_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.995
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.email_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.995
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.995
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.ccm_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.995
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.clearcase_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.996
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.depend_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.996
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.depend.constantpool_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.996
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.ejb_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.996
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.extension_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.996
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.extension.resolvers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.997
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.i18n_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.997
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.image_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.997
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.j2ee_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.997
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.javacc_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.998
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.javah_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.998
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.jdepend_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.998
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.jlink_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.999
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.jsp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.999
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.jsp.compilers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.999
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.junit_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:43.999
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.native2ascii_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.000
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.net_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.000
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.perforce_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.000
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.pvcs_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.000
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.script_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.001
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.sos_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.001
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.sound_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.001
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.splash_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.001
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.ssh_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.002
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.testing_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.002
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.unix_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.002
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.vss_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.002
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.optional.windows_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.002
+!MESSAGE Missing imported package org.apache.tools.ant.taskdefs.rmic_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.003
+!MESSAGE Missing imported package org.apache.tools.ant.types_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.003
+!MESSAGE Missing imported package org.apache.tools.ant.types.mappers_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.003
+!MESSAGE Missing imported package org.apache.tools.ant.types.optional_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.003
+!MESSAGE Missing imported package org.apache.tools.ant.types.optional.depend_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.004
+!MESSAGE Missing imported package org.apache.tools.ant.types.optional.image_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.004
+!MESSAGE Missing imported package org.apache.tools.ant.types.resolver_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.004
+!MESSAGE Missing imported package org.apache.tools.ant.types.resources_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.004
+!MESSAGE Missing imported package org.apache.tools.ant.types.resources.comparators_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.004
+!MESSAGE Missing imported package org.apache.tools.ant.types.resources.selectors_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.005
+!MESSAGE Missing imported package org.apache.tools.ant.types.selectors_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.005
+!MESSAGE Missing imported package org.apache.tools.ant.types.selectors.modifiedselector_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.005
+!MESSAGE Missing imported package org.apache.tools.ant.types.spi_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.005
+!MESSAGE Missing imported package org.apache.tools.ant.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.006
+!MESSAGE Missing imported package org.apache.tools.ant.util.depend_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.006
+!MESSAGE Missing imported package org.apache.tools.ant.util.depend.bcel_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.006
+!MESSAGE Missing imported package org.apache.tools.ant.util.facade_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.006
+!MESSAGE Missing imported package org.apache.tools.ant.util.java15_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.007
+!MESSAGE Missing imported package org.apache.tools.ant.util.optional_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.007
+!MESSAGE Missing imported package org.apache.tools.ant.util.regexp_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.007
+!MESSAGE Missing imported package org.apache.tools.bzip2_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.007
+!MESSAGE Missing imported package org.apache.tools.mail_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.008
+!MESSAGE Missing imported package org.apache.tools.tar_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.008
+!MESSAGE Missing imported package org.apache.tools.zip_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.008
+!MESSAGE Missing imported package org.apache.velocity_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.008
+!MESSAGE Missing imported package org.apache.velocity.anakia_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.008
+!MESSAGE Missing imported package org.apache.velocity.app_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.009
+!MESSAGE Missing imported package org.apache.velocity.app.event_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.009
+!MESSAGE Missing imported package org.apache.velocity.app.event.implement_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.009
+!MESSAGE Missing imported package org.apache.velocity.app.tools_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.009
+!MESSAGE Missing imported package org.apache.velocity.context_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.010
+!MESSAGE Missing imported package org.apache.velocity.convert_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.010
+!MESSAGE Missing imported package org.apache.velocity.exception_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.010
+!MESSAGE Missing imported package org.apache.velocity.io_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.010
+!MESSAGE Missing imported package org.apache.velocity.runtime_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.010
+!MESSAGE Missing imported package org.apache.velocity.runtime.defaults_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.011
+!MESSAGE Missing imported package org.apache.velocity.runtime.directive_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.011
+!MESSAGE Missing imported package org.apache.velocity.runtime.log_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.011
+!MESSAGE Missing imported package org.apache.velocity.runtime.parser_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.011
+!MESSAGE Missing imported package org.apache.velocity.runtime.parser.node_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.012
+!MESSAGE Missing imported package org.apache.velocity.runtime.resource_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.012
+!MESSAGE Missing imported package org.apache.velocity.runtime.resource.loader_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.012
+!MESSAGE Missing imported package org.apache.velocity.runtime.resource.util_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.012
+!MESSAGE Missing imported package org.apache.velocity.runtime.visitor_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.012
+!MESSAGE Missing imported package org.apache.velocity.servlet_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.013
+!MESSAGE Missing imported package org.apache.velocity.texen_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.013
+!MESSAGE Missing imported package org.apache.velocity.texen.ant_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.013
+!MESSAGE Missing imported package org.apache.velocity.texen.defaults_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.013
+!MESSAGE Missing imported package org.apache.velocity.texen.util_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.014
+!MESSAGE Missing imported package org.apache.velocity.util_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.014
+!MESSAGE Missing imported package org.apache.velocity.util.introspection_1.5.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.014
+!MESSAGE Missing imported package org.apache.wml_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.014
+!MESSAGE Missing imported package org.apache.wml.dom_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.014
+!MESSAGE Missing imported package org.apache.ws.commons.serialize_1.0.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.015
+!MESSAGE Missing imported package org.apache.ws.commons.util_1.0.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.015
+!MESSAGE Missing imported package org.apache.wsil_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.015
+!MESSAGE Missing imported package org.apache.wsil.client_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.015
+!MESSAGE Missing imported package org.apache.wsil.extension_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.015
+!MESSAGE Missing imported package org.apache.wsil.extension.uddi_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.016
+!MESSAGE Missing imported package org.apache.wsil.extension.wsdl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.016
+!MESSAGE Missing imported package org.apache.wsil.impl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.016
+!MESSAGE Missing imported package org.apache.wsil.impl.extension_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.016
+!MESSAGE Missing imported package org.apache.wsil.impl.extension.uddi_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.016
+!MESSAGE Missing imported package org.apache.wsil.impl.extension.wsdl_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.017
+!MESSAGE Missing imported package org.apache.wsil.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.017
+!MESSAGE Missing imported package org.apache.wsil.xml_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.017
+!MESSAGE Missing imported package org.apache.xalan_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.017
+!MESSAGE Missing imported package org.apache.xalan.client_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.017
+!MESSAGE Missing imported package org.apache.xalan.extensions_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.018
+!MESSAGE Missing imported package org.apache.xalan.lib_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.018
+!MESSAGE Missing imported package org.apache.xalan.lib.sql_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.018
+!MESSAGE Missing imported package org.apache.xalan.processor_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.018
+!MESSAGE Missing imported package org.apache.xalan.res_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.018
+!MESSAGE Missing imported package org.apache.xalan.serialize_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.018
+!MESSAGE Missing imported package org.apache.xalan.templates_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.019
+!MESSAGE Missing imported package org.apache.xalan.trace_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.019
+!MESSAGE Missing imported package org.apache.xalan.transformer_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.019
+!MESSAGE Missing imported package org.apache.xalan.xslt_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.019
+!MESSAGE Missing imported package org.apache.xalan.xsltc_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.019
+!MESSAGE Missing imported package org.apache.xalan.xsltc.cmdline_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.020
+!MESSAGE Missing imported package org.apache.xalan.xsltc.cmdline.getopt_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.020
+!MESSAGE Missing imported package org.apache.xalan.xsltc.compiler_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.020
+!MESSAGE Missing imported package org.apache.xalan.xsltc.compiler.util_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.020
+!MESSAGE Missing imported package org.apache.xalan.xsltc.dom_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.020
+!MESSAGE Missing imported package org.apache.xalan.xsltc.runtime_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.020
+!MESSAGE Missing imported package org.apache.xalan.xsltc.runtime.output_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.021
+!MESSAGE Missing imported package org.apache.xalan.xsltc.trax_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.021
+!MESSAGE Missing imported package org.apache.xalan.xsltc.util_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.021
+!MESSAGE Missing imported package org.apache.xerces.dom_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.021
+!MESSAGE Missing imported package org.apache.xerces.dom.events_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.021
+!MESSAGE Missing imported package org.apache.xerces.dom3.as_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.022
+!MESSAGE Missing imported package org.apache.xerces.impl_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.025
+!MESSAGE Missing imported package org.apache.xerces.impl.dtd_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.025
+!MESSAGE Missing imported package org.apache.xerces.impl.dtd.models_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.025
+!MESSAGE Missing imported package org.apache.xerces.impl.dv_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.025
+!MESSAGE Missing imported package org.apache.xerces.impl.dv.dtd_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.025
+!MESSAGE Missing imported package org.apache.xerces.impl.dv.util_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.026
+!MESSAGE Missing imported package org.apache.xerces.impl.dv.xs_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.026
+!MESSAGE Missing imported package org.apache.xerces.impl.io_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.026
+!MESSAGE Missing imported package org.apache.xerces.impl.msg_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.026
+!MESSAGE Missing imported package org.apache.xerces.impl.validation_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.026
+!MESSAGE Missing imported package org.apache.xerces.impl.xpath_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.026
+!MESSAGE Missing imported package org.apache.xerces.impl.xpath.regex_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.027
+!MESSAGE Missing imported package org.apache.xerces.impl.xs_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.027
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.identity_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.027
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.models_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.027
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.opti_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.027
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.traversers_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.027
+!MESSAGE Missing imported package org.apache.xerces.impl.xs.util_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.028
+!MESSAGE Missing imported package org.apache.xerces.jaxp_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.028
+!MESSAGE Missing imported package org.apache.xerces.jaxp.datatype_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.028
+!MESSAGE Missing imported package org.apache.xerces.jaxp.validation_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.028
+!MESSAGE Missing imported package org.apache.xerces.parsers_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.028
+!MESSAGE Missing imported package org.apache.xerces.util_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.028
+!MESSAGE Missing imported package org.apache.xerces.xinclude_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.029
+!MESSAGE Missing imported package org.apache.xerces.xni_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.029
+!MESSAGE Missing imported package org.apache.xerces.xni.grammars_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.029
+!MESSAGE Missing imported package org.apache.xerces.xni.parser_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.029
+!MESSAGE Missing imported package org.apache.xerces.xpointer_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.029
+!MESSAGE Missing imported package org.apache.xerces.xs_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.029
+!MESSAGE Missing imported package org.apache.xerces.xs.datatypes_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.030
+!MESSAGE Missing imported package org.apache.xml.dtm_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.030
+!MESSAGE Missing imported package org.apache.xml.dtm.ref_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.030
+!MESSAGE Missing imported package org.apache.xml.dtm.ref.dom2dtm_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.031
+!MESSAGE Missing imported package org.apache.xml.dtm.ref.sax2dtm_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.032
+!MESSAGE Missing imported package org.apache.xml.res_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.033
+!MESSAGE Missing imported package org.apache.xml.resolver_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.034
+!MESSAGE Missing imported package org.apache.xml.resolver.apps_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.034
+!MESSAGE Missing imported package org.apache.xml.resolver.etc_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.036
+!MESSAGE Missing imported package org.apache.xml.resolver.helpers_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.036
+!MESSAGE Missing imported package org.apache.xml.resolver.readers_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.037
+!MESSAGE Missing imported package org.apache.xml.resolver.tools_1.2.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.037
+!MESSAGE Missing imported package org.apache.xml.serialize_2.9.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.037
+!MESSAGE Missing imported package org.apache.xml.serializer_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.038
+!MESSAGE Missing imported package org.apache.xml.serializer.dom3_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.038
+!MESSAGE Missing imported package org.apache.xml.utils_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.039
+!MESSAGE Missing imported package org.apache.xml.utils.res_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.039
+!MESSAGE Missing imported package org.apache.xmlcommons_1.3.4.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.039
+!MESSAGE Missing imported package org.apache.xmlrpc_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.039
+!MESSAGE Missing imported package org.apache.xmlrpc.client_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.040
+!MESSAGE Missing imported package org.apache.xmlrpc.client.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.040
+!MESSAGE Missing imported package org.apache.xmlrpc.common_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.040
+!MESSAGE Missing imported package org.apache.xmlrpc.jaxb_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.041
+!MESSAGE Missing imported package org.apache.xmlrpc.metadata_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.042
+!MESSAGE Missing imported package org.apache.xmlrpc.parser_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.042
+!MESSAGE Missing imported package org.apache.xmlrpc.serializer_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.043
+!MESSAGE Missing imported package org.apache.xmlrpc.server_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.043
+!MESSAGE Missing imported package org.apache.xmlrpc.util_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.044
+!MESSAGE Missing imported package org.apache.xmlrpc.webserver_0.0.0.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.044
+!MESSAGE Missing imported package org.apache.xpath_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.044
+!MESSAGE Missing imported package org.apache.xpath.axes_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.045
+!MESSAGE Missing imported package org.apache.xpath.compiler_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.045
+!MESSAGE Missing imported package org.apache.xpath.domapi_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.046
+!MESSAGE Missing imported package org.apache.xpath.functions_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.047
+!MESSAGE Missing imported package org.apache.xpath.jaxp_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.047
+!MESSAGE Missing imported package org.apache.xpath.objects_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.048
+!MESSAGE Missing imported package org.apache.xpath.operations_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.048
+!MESSAGE Missing imported package org.apache.xpath.patterns_2.7.1.
+!SUBENTRY 2 weibo4j-oauth2 2 0 2013-02-27 11:14:44.052
+!MESSAGE Missing imported package org.apache.xpath.res_2.7.1.

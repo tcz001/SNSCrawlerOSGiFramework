@@ -1,0 +1,41 @@
+!SESSION 2013-02-27 11:24:07.467 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_15
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=zh_CN
+Command-line arguments:  -dev file:/home/tcz/Fetch_OSGI/.metadata/.plugins/org.eclipse.pde.core/Fetch/dev.properties -os linux -ws gtk -arch x86 -consoleLog -console
+
+!ENTRY weiboFetchAPIBundle 4 0 2013-02-27 11:24:08.182
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "weiboFetchAPIBundle_1.0.0.qualifier [33]" could not be resolved. Reason: Missing Constraint: Import-Package: weibo4j.examples.oauth2; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 4 0 2013-02-27 11:24:08.187
+!MESSAGE Bundle initial@reference:file:../../../../home/tcz/Fetch_OSGI/weiboFetchAPIBundle/ was not resolved.
+
+!ENTRY org.eclipse.osgi 2 0 2013-02-27 11:24:08.204
+!MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2013-02-27 11:24:08.204
+!MESSAGE Bundle initial@reference:file:../../../../home/tcz/Fetch_OSGI/weiboFetchAPIBundle/ was not resolved.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:24:08.205
+!MESSAGE Missing imported package weibo4j.examples.oauth2_0.0.0.
+
+!ENTRY org.eclipse.osgi 2 0 2013-02-27 11:24:08.213
+!MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2013-02-27 11:24:08.213
+!MESSAGE Bundle weiboFetchAPIBundle_1.0.0.qualifier [33] was not resolved.
+!SUBENTRY 2 weiboFetchAPIBundle 2 0 2013-02-27 11:24:08.213
+!MESSAGE Missing imported package weibo4j.examples.oauth2_0.0.0.

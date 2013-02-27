@@ -1,0 +1,59 @@
+package fetch.api;
+
+import java.util.Hashtable;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.util.tracker.ServiceTracker;
+
+import fetch.api.service.user.CrawlerService;
+import fetch.api.service.impl.WeiboFriendsTimelineCrawlerServiceImpl;
+
+public class Activator implements BundleActivator {
+
+	private ServiceTracker<?, ?> crawlerServiceTracker;
+	private CrawlerService crawlerService;
+	
+	/*
+	 * (non-Javadoc)
+	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
+	 */
+	public void start(BundleContext context) throws Exception {
+		// register the service
+		context.registerService(
+				CrawlerService.class.getName(), 
+				new WeiboFriendsTimelineCrawlerServiceImpl(),
+				new Hashtable<String, Object>());
+		
+		// create a tracker and track the log service
+		crawlerServiceTracker = 
+			new ServiceTracker<Object, Object>(context, CrawlerService.class.getName(), null);
+		crawlerServiceTracker.open();
+		
+		// grab the service
+		crawlerService = (CrawlerService) crawlerServiceTracker.getService();
+
+		if(crawlerService != null) {
+			String code = null;
+//			code = "103f2d263679263e3b3b8023f7b7a22c";
+			code = crawlerService.getOAuthCode();
+			crawlerService.fetch(code);
+			crawlerService.log();
+		}
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 */
+	public void stop(BundleContext context) throws Exception {
+		if(crawlerService != null)
+			crawlerService.log();
+		
+		// close the service tracker
+		crawlerServiceTracker.close();
+		crawlerServiceTracker = null;
+		
+		crawlerService = null;
+	}
+}

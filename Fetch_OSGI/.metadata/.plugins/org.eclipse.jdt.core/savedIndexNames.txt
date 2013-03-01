@@ -1,23 +1,6 @@
-INDEX VERSION 1.126+/home/tcz/Fetch_OSGI/.metadata/.plugins/org.eclipse.jdt.core
-2714312255.index
-1061142838.index
-663002977.index
-3763072985.index
-1227402519.index
-2433496757.index
-383464459.index
+INDEX VERSION 1.126+/home/tcz/Github/SNSCrawlerOSGiFramework/Fetch_OSGI/.metadata/.plugins/org.eclipse.jdt.core
+2466306824.index
 987192408.index
-2953399316.index
-1028153619.index
-2593801683.index
-4122798751.index
-3226081158.index
-53870032.index
-2399913985.index
+2065879203.index
 3543820184.index
-2198845176.index
-2877085845.index
-792451393.index
-2186885261.index
-1591490463.index
-970223945.index
+314778780.index

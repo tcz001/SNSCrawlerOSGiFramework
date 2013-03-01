@@ -1,7 +1,0 @@
-package fetch.api.service.impl;
-
-import weibo4j.examples.*;
-
-public class OAuthimpl {
-	
-}

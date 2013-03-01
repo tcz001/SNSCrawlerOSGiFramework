@@ -1,7 +1,0 @@
-package fetch.api.service;
-
-public interface SimpleFetchService {
-
-	public void log(String message);
-	
-}

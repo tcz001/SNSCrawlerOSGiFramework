@@ -1,7 +1,0 @@
-package userapibundle;
-
-public interface SimpleLogService {
-
-	public void log(String message);
-	
-}

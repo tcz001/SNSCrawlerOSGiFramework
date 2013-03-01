@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<map>
-	<bundle bundleID="804" class="crawler.api.fetch.Activator" localization="OSGI-INF/l10n/bundle" name="FetchAPIBundle" project="weiboFetchAPIBundle" provider="torchz"/>
-	<bundle bundleID="805" class="testlog.Activator" localization="OSGI-INF/l10n/bundle" name="Testlog" project="testlog" provider="torchz"/>
-	<bundle bundleID="803" localization="OSGI-INF/l10n/bundle" name="UserAPIBundle" project="FetchAPIBundle" provider="torchz"/>
-	<bundle bundleID="798" localization="OSGI-INF/l10n/bundle" name="weibo4j-oauth2" project="weibo4j-oauth2" provider="sina"/>
-</map>

@@ -1,7 +1,0 @@
-package fetch.api.service.user;
-
-public interface CrawlerService {
-
-	public void fetch(String uid,String appkey);
-	
-}

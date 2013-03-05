@@ -6,11 +6,4 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Vendor: torchz
 Export-Package: crawler.api.service.oauthAccess
-Import-Package: org.scribe.builder,
- org.scribe.builder.api,
- org.scribe.exceptions,
- org.scribe.extractors,
- org.scribe.model,
- org.scribe.oauth,
- org.scribe.services,
- org.scribe.utils
+Import-Package: org.scribe.model

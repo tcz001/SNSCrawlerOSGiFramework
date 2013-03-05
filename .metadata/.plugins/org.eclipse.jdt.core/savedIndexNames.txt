@@ -1,20 +1,9 @@
 INDEX VERSION 1.126+C:\Users\tcz\Documents\GitHub\SNSCrawlerOSGiFramework\.metadata\.plugins\org.eclipse.jdt.core
-1522289322.index
-3974580528.index
-4108727661.index
-305854171.index
-1995173708.index
-30765161.index
-3133528496.index
-3065916431.index
-2509990602.index
-3290158925.index
-163172794.index
-1299022128.index
-98735177.index
-4155206848.index
-4041092966.index
-1940744411.index
 3142318493.index
-1498219845.index
-1115467115.index
+1037346920.index
+1541389726.index
+1940744411.index
+3290158925.index
+1522289322.index
+98735177.index
+2509990602.index

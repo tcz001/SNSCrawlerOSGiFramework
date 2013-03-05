@@ -17,7 +17,7 @@
 <stringAttribute key="pde.version" value="3.3"/>
 <booleanAttribute key="show_selected_only" value="false"/>
 <stringAttribute key="target_bundles" value="org.apache.commons.codec@default:default,org.apache.felix.gogo.command@default:default,org.apache.felix.gogo.runtime@default:default,org.apache.felix.gogo.shell@default:default,org.eclipse.equinox.console@default:default,org.eclipse.osgi@-1:true,org.hamcrest.core@default:default,org.junit*4.10.0.v4_10_0_v20120426-0900@default:default"/>
-<stringAttribute key="timestamp" value="1362458711912"/>
+<stringAttribute key="timestamp" value="1362466463800"/>
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
 <booleanAttribute key="useDefaultConfigArea" value="true"/>

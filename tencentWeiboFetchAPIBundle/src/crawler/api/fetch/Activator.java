@@ -7,7 +7,7 @@ import org.osgi.framework.BundleContext;
 import org.osgi.util.tracker.ServiceTracker;
 
 import crawler.api.service.fetch.FetchService;
-import crawler.api.service.impl.WeiboFriendsIDsFetchServiceImpl;
+import crawler.api.service.impl.tencentWeiboFriendsIDsFetchServiceImpl;
 
 
 public class Activator implements BundleActivator {
@@ -23,7 +23,7 @@ public class Activator implements BundleActivator {
 		// register the service
 		context.registerService(
 				FetchService.class.getName(), 
-				new WeiboFriendsIDsFetchServiceImpl(),
+				new tencentWeiboFriendsIDsFetchServiceImpl(),
 				new Hashtable<String, Object>());
 		
 		// create a tracker and track the log service
@@ -36,6 +36,25 @@ public class Activator implements BundleActivator {
 
 		if(crawlerService != null) {
 			crawlerService.init();
+		}
+	}
+	
+	public void fetch(BundleContext context) throws Exception {
+		// register the service
+		context.registerService(
+				FetchService.class.getName(), 
+				new tencentWeiboFriendsIDsFetchServiceImpl(),
+				new Hashtable<String, Object>());
+		
+		// create a tracker and track the log service
+		crawlerServiceTracker = 
+			new ServiceTracker<Object, Object>(context, FetchService.class.getName(), null);
+		crawlerServiceTracker.open();
+		
+		// grab the service
+		crawlerService = (FetchService) crawlerServiceTracker.getService();
+
+		if(crawlerService != null) {
 			crawlerService.fetch();
 		}
 	}

@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-task-tag-projects-already-scanned=FetchAPIBundle,OAuthAPIBundle,ScribeOAuthAPIBundle,weiboFetchAPIBundle
+task-tag-projects-already-scanned=FetchAPIBundle,OAuthAPIBundle,ScribeOAuthAPIBundle,weiboFetchAPIBundle,JSON-libBundle

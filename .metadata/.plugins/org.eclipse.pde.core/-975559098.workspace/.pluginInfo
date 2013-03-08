@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="799" localization="OSGI-INF/l10n/bundle" name="JSON-libBundle" project="JSON-libBundle"/>
+	<bundle bundleID="801" localization="OSGI-INF/l10n/bundle" name="ScribeOAuthAPIBundle" project="ScribeOAuthAPIBundle">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="804" class="crawler.api.fetch.tencentWeiboFetchActivator" localization="OSGI-INF/l10n/bundle" name="TencentWeiboFetchAPIBundle" project="tencentWeiboFetchAPIBundle"/>
+	<bundle bundleID="800" localization="OSGI-INF/l10n/bundle" name="OAuthAPIBundle" project="OAuthAPIBundle" provider="torchz"/>
+	<bundle bundleID="798" localization="OSGI-INF/l10n/bundle" name="UserAPIBundle" project="FetchAPIBundle" provider="torchz"/>
+	<bundle bundleID="803" class="crawler.api.fetch.sinaWeiboFetchActivator" localization="OSGI-INF/l10n/bundle" name="SinaWeiboFetchAPIBundle" project="sinaWeiboFetchAPIBundle"/>
+</map>

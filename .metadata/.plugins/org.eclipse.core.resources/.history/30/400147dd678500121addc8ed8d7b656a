@@ -1,0 +1,14 @@
+package org.scribe.builder.api;
+
+import org.scribe.model.OAuthConfig;
+import org.scribe.oauth.OAuthService;
+
+public class TencentWeiboApi implements Api {
+
+	@Override
+	public OAuthService createService(OAuthConfig config) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

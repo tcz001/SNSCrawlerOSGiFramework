@@ -1,0 +1,15 @@
+package crawler.api.service.impl;
+
+import org.scribe.model.Token;
+
+import crawler.api.service.oauthAccess.OAuthAccessService;
+
+public class OAuthimpl implements OAuthAccessService {
+
+	@Override
+	public Token getToken() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,4 +1,0 @@
-SNSCrawlerOSGiFramework
-=======================
-
-SNSCrawlerOSGiFramework

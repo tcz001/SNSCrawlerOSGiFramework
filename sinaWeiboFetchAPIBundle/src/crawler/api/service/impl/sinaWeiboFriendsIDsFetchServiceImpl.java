@@ -5,9 +5,9 @@ import org.scribe.model.Response;
 import org.scribe.model.Verb;
 import net.sf.json.*;
 
-import crawler.api.service.fetch.FetchService;
+import crawler.api.service.SinaWeiboFetchService;
 
-public class sinaWeiboFriendsIDsFetchServiceImpl implements FetchService {
+public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService {
 	private static final String PROTECTED_RESOURCE_URL = "https://api.weibo.com/2/friendships/friends/ids.json";
 	JSONObject json;
 	OAuthimpl oAuthimpl;

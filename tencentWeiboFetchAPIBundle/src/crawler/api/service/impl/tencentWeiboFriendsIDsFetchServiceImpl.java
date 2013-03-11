@@ -5,9 +5,9 @@ import org.scribe.model.Response;
 import org.scribe.model.Verb;
 import net.sf.json.*;
 
-import crawler.api.service.fetch.FetchService;
+import crawler.api.service.TencentWeiboFetchService;
 
-public class tencentWeiboFriendsIDsFetchServiceImpl implements FetchService {
+public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetchService {
 	private static final String PROTECTED_RESOURCE_URL = "https://open.t.qq.com/api/friends/fanslist";
 	private static final String apiKey = "801320236";
 	JSONObject json;

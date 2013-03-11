@@ -6,14 +6,15 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.util.tracker.ServiceTracker;
 
-import crawler.api.service.fetch.FetchService;
+import crawler.api.service.TencentWeiboFetchService;
+
 import crawler.api.service.impl.tencentWeiboFriendsIDsFetchServiceImpl;
 
 
 public class Activator implements BundleActivator {
 
 	private ServiceTracker<?, ?> crawlerServiceTracker;
-	private FetchService crawlerService;
+	private TencentWeiboFetchService crawlerService;
 	
 	/*
 	 * (non-Javadoc)
@@ -22,39 +23,20 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext context) throws Exception {
 		// register the service
 		context.registerService(
-				FetchService.class.getName(), 
+				TencentWeiboFetchService.class.getName(), 
 				new tencentWeiboFriendsIDsFetchServiceImpl(),
 				new Hashtable<String, Object>());
 		
 		// create a tracker and track the log service
 		crawlerServiceTracker = 
-			new ServiceTracker<Object, Object>(context, FetchService.class.getName(), null);
+			new ServiceTracker<Object, Object>(context, TencentWeiboFetchService.class.getName(), null);
 		crawlerServiceTracker.open();
 		
 		// grab the service
-		crawlerService = (FetchService) crawlerServiceTracker.getService();
+		crawlerService = (TencentWeiboFetchService) crawlerServiceTracker.getService();
 
 		if(crawlerService != null) {
 			crawlerService.init();
-		}
-	}
-	
-	public void fetch(BundleContext context) throws Exception {
-		// register the service
-		context.registerService(
-				FetchService.class.getName(), 
-				new tencentWeiboFriendsIDsFetchServiceImpl(),
-				new Hashtable<String, Object>());
-		
-		// create a tracker and track the log service
-		crawlerServiceTracker = 
-			new ServiceTracker<Object, Object>(context, FetchService.class.getName(), null);
-		crawlerServiceTracker.open();
-		
-		// grab the service
-		crawlerService = (FetchService) crawlerServiceTracker.getService();
-
-		if(crawlerService != null) {
 			crawlerService.fetch();
 		}
 	}

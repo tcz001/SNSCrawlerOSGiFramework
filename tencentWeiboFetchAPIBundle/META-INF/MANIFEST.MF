@@ -1,14 +1,13 @@
 Manifest-Version: 1.0
-Export-Package: crawler.api.fetch,crawler.api.service.impl
-Require-Bundle: ScribeOAuthAPIBundle
-Bundle-Version: 1.0.0.qualifier
-Bundle-Name: TencentWeiboFetchAPIBundle
-Bundle-Activator: crawler.api.fetch.Activator
 Bundle-ManifestVersion: 2
-Import-Package: crawler.api.service.fetch,crawler.api.service.oauthAcc
- ess,net.sf.json,org.osgi.framework;version="1.3.0",org.osgi.util.trac
- ker;version="1.5.1",org.scribe.builder,org.scribe.builder.api,org.scr
- ibe.model,org.scribe.oauth
+Bundle-Name: TencentWeiboFetchAPIBundle
 Bundle-SymbolicName: tencentWeiboFetchAPIBundle
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: crawler.api.fetch.Activator
+Import-Package: crawler.api.service.fetch,
+ crawler.api.service.oauthAccess,
+ org.osgi.framework;version="1.7.0",
+ org.osgi.util.tracker;version="1.5.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-
+Require-Bundle: ScribeOAuthAPIBundle;bundle-version="1.0.0",
+ JSON-libBundle;bundle-version="1.0.0"

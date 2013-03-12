@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FetchAPIBundle.iml" filepath="$PROJECT_DIR$/FetchAPIBundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSON-libBundle.iml" filepath="$PROJECT_DIR$/JSON-libBundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OAuthAPIBundle.iml" filepath="$PROJECT_DIR$/OAuthAPIBundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/groovy/groovy.iml" filepath="$PROJECT_DIR$/groovy/groovy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scribe-java.iml" filepath="$PROJECT_DIR$/scribe-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sinaWeiboFetchAPIBundle.iml" filepath="$PROJECT_DIR$/sinaWeiboFetchAPIBundle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tencentWeiboFetchAPIBundle.iml" filepath="$PROJECT_DIR$/tencentWeiboFetchAPIBundle.iml" />
+    </modules>
+  </component>
+</project>
+

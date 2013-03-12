@@ -9,7 +9,7 @@ import org.scribe.utils.*;
  */
 public class TencentWeiboApi extends DefaultApi20
 {
-  private static final String AUTHORIZE_URL = "https://open.t.qq.com/cgi-bin/oauth2/authorize?client_id=%s&response_type=code&redirect_uri=%s";
+  private static final String AUTHORIZE_URL = "https://open.t.qq.com/cgi-bin/oauth2/authorize?client_id=%s&response_type=code&redirect_uri=%s&forcelogin=false";
   private static final String SCOPED_AUTHORIZE_URL = AUTHORIZE_URL + "&scope=%s";
 
   @Override

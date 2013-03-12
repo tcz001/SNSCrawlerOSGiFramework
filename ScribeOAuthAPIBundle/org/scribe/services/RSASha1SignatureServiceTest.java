@@ -1,6 +1,6 @@
 package org.scribe.services;
 
-import static org.junit.Assert.*;
+import static org.testng.Assert.*;
 
 import org.junit.*;
 

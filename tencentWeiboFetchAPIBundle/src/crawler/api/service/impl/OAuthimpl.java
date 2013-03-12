@@ -48,15 +48,15 @@ public class OAuthimpl implements OAuthAccessService {
 		Verifier verifier = new Verifier(in.nextLine());
 		System.out.println("And paste the client_id here");
 		System.out.print(">>");
-		client_id = new String(in.nextLine());
-		System.out.println();
+		client_id = new String("B94FB0DE54C3269F73C737311E12B5D5");//in.nextLine());
+		System.out.println("client_id = " + client_id);
 
 		// Trade the Request Token and Verifier for the Access Token
 		System.out.println("Trading the Request Token for an Access Token...");
 		accessToken = service.getAccessToken(EMPTY_TOKEN, verifier);
 		System.out.println("Got the Access Token!");
 		System.out.println("(if your curious it looks like this: "
-				+ accessToken + " )");
+				+ accessToken.getToken() + " )");
 		System.out.println();
 		return accessToken;
 	}

@@ -1,0 +1,46 @@
+allprojects {
+    group   = 'crawler.api.fetch'
+    version = '0.1'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'osgi'
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'org.osgi:org.osgi.core:5.0.0'
+        compile 'org.osgi:org.osgi.compendium:4.3.1'
+        compile 'commons-codec:commons-codec:1.7'
+	compile 'junit:junit:4.11'
+    }
+}
+
+project(':ScribeOAuthAPIBundle') {
+    apply plugin: 'java'
+    apply plugin: 'osgi'
+    configure(jar.manifest) {
+        version = '0.1'
+        name = 'ScribeOAuthAPIBundle'
+        symbolicName = 'ScribeOAuthAPIBundle'
+        jar.archiveName = "ScribeOAuthAPIBundle.jar"
+        instruction 'Export-Package' , 'org.scribe.*'
+    }
+}
+
+project(':OAuthAPIBundle') {
+    apply plugin: 'java'
+    apply plugin: 'osgi'
+    dependencies {
+        compile project(':ScribeOAuthAPIBundle')
+    }
+    configure(jar.manifest) {
+	version = '0.1'
+	name = 'OAuthAPIBundle'
+	symbolicName = 'OAuthAPIBundle'
+	jar.archiveName = "OAuthAPIBundle.jar"
+	instruction 'Export-Package' , 'crawler.api.service.oauthAccess'
+    }
+}

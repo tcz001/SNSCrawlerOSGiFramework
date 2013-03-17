@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="org.apache.commons.codec_1.3.0.v201101211617">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/felix-framework-4.2.0/bundle/org.apache.commons.codec_1.3.0.v201101211617.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

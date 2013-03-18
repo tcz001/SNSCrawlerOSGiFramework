@@ -13,14 +13,17 @@ subprojects {
     dependencies {
         compile 'org.osgi:org.osgi.core:5.0.0'
         compile 'org.osgi:org.osgi.compendium:4.3.1'
-        compile 'commons-codec:commons-codec:1.7'
-	compile 'junit:junit:4.11'
     }
 }
 
 project(':ScribeOAuthAPIBundle') {
-    apply plugin: 'java'
-    apply plugin: 'osgi'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        compile 'commons-codec:commons-codec:1.3'
+	compile 'junit:junit:4.11'
+    }
     configure(jar.manifest) {
         version = '0.1'
         name = 'ScribeOAuthAPIBundle'
@@ -31,8 +34,6 @@ project(':ScribeOAuthAPIBundle') {
 }
 
 project(':OAuthAPIBundle') {
-    apply plugin: 'java'
-    apply plugin: 'osgi'
     dependencies {
         compile project(':ScribeOAuthAPIBundle')
     }
@@ -42,5 +43,70 @@ project(':OAuthAPIBundle') {
 	symbolicName = 'OAuthAPIBundle'
 	jar.archiveName = "OAuthAPIBundle.jar"
 	instruction 'Export-Package' , 'crawler.api.service.oauthAccess'
+    }
+}
+
+project(':FetchAPIBundle') {
+    configure(jar.manifest) {
+	version = '0.1'
+	name = 'FetchAPIBundle'
+	symbolicName = 'FetchAPIBundle'
+	jar.archiveName = "FetchAPIBundle.jar"
+	instruction 'Export-Package' , 
+		'crawler.api.service.fetch'
+    }
+}
+
+project(':sinaWeiboFetchAPIBundle') {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        compile 'net.sf.json-lib:json-lib:2.4:jdk15'
+        compile project(':ScribeOAuthAPIBundle')
+        compile project(':OAuthAPIBundle')
+        compile project(':FetchAPIBundle')
+    }
+    configure(jar.manifest) {
+	version = '0.1'
+	name = 'sinaWeiboFetchAPIBundle'
+	symbolicName = 'sinaWeiboFetchAPIBundle'
+	jar.archiveName = "sinaWeiboFetchAPIBundle.jar"
+	instruction 'Bundle-Activator', 'crawler.api.fetch.Activator'
+	instruction 'Import-Package' , 
+		'crawler.api.service.oauthAccess',
+		'crawler.api.service.fetch',
+ 		'org.osgi.framework;version="1.7.0"',
+ 		'org.osgi.util.tracker;version="1.5.1"'
+	instruction 'Require-Bundle' , 
+		'ScribeOAuthAPIBundle',
+		'JSON-libBundle' 
+    }
+}
+
+project(':tencentWeiboFetchAPIBundle') {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        compile 'net.sf.json-lib:json-lib:2.4:jdk15'
+        compile project(':ScribeOAuthAPIBundle')
+        compile project(':OAuthAPIBundle')
+        compile project(':FetchAPIBundle')
+    }
+    configure(jar.manifest) {
+	version = '0.1'
+	name = 'tencentWeiboFetchAPIBundle'
+	symbolicName = 'tencentWeiboFetchAPIBundle'
+	jar.archiveName = "tencentWeiboFetchAPIBundle.jar"
+	instruction 'Bundle-Activator', 'crawler.api.fetch.Activator'
+	instruction 'Import-Package' , 
+		'crawler.api.service.oauthAccess',
+		'crawler.api.service.fetch',
+ 		'org.osgi.framework;version="1.7.0"',
+ 		'org.osgi.util.tracker;version="1.5.1"'
+	instruction 'Require-Bundle' , 
+		'ScribeOAuthAPIBundle',
+		'JSON-libBundle' 
     }
 }

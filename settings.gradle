@@ -1,2 +1,5 @@
 include "OAuthAPIBundle",
-	"ScribeOAuthAPIBundle"
+	"ScribeOAuthAPIBundle",
+	"FetchAPIBundle",
+	"sinaWeiboFetchAPIBundle",
+	"sinaWeiboFetchAPIBundle"

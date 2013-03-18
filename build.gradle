@@ -14,6 +14,7 @@ subprojects {
         compile 'org.osgi:org.osgi.core:5.0.0'
         compile 'org.osgi:org.osgi.compendium:4.3.1'
     }
+
 }
 
 project(':ScribeOAuthAPIBundle') {
@@ -24,12 +25,16 @@ project(':ScribeOAuthAPIBundle') {
         compile 'commons-codec:commons-codec:1.3'
 	compile 'junit:junit:4.11'
     }
-    configure(jar.manifest) {
-        version = '0.1'
-        name = 'ScribeOAuthAPIBundle'
-        symbolicName = 'ScribeOAuthAPIBundle'
-        jar.archiveName = "ScribeOAuthAPIBundle.jar"
-        instruction 'Export-Package' , 'org.scribe.*'
+    jar {
+        manifest {
+            version = '0.1'
+            name = 'ScribeOAuthAPIBundle'
+            symbolicName = 'ScribeOAuthAPIBundle'
+            jar.archiveName = "ScribeOAuthAPIBundle.jar"
+            instruction 'Export-Package' , 'org.scribe.*'
+	    instruction 'Import-Package' , '' 
+	}
+	from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
     }
 }
 
@@ -37,24 +42,36 @@ project(':OAuthAPIBundle') {
     dependencies {
         compile project(':ScribeOAuthAPIBundle')
     }
-    configure(jar.manifest) {
-	version = '0.1'
-	name = 'OAuthAPIBundle'
-	symbolicName = 'OAuthAPIBundle'
-	jar.archiveName = "OAuthAPIBundle.jar"
-	instruction 'Export-Package' , 'crawler.api.service.oauthAccess'
+    jar {
+        manifest {
+	    version = '0.1'
+	    name = 'OAuthAPIBundle'
+	    symbolicName = 'OAuthAPIBundle'
+	    jar.archiveName = "OAuthAPIBundle.jar"
+	    instruction 'Export-Package' , 'crawler.api.service.oauthAccess'
+	}
     }
 }
 
 project(':FetchAPIBundle') {
-    configure(jar.manifest) {
-	version = '0.1'
-	name = 'FetchAPIBundle'
-	symbolicName = 'FetchAPIBundle'
-	jar.archiveName = "FetchAPIBundle.jar"
-	instruction 'Export-Package' , 
-		'crawler.api.service.fetch'
+    jar {
+        manifest {
+  	    version = '0.1'
+  	    name = 'FetchAPIBundle'
+  	    symbolicName = 'FetchAPIBundle'
+  	    jar.archiveName = "FetchAPIBundle.jar"
+  	    instruction 'Export-Package' , 
+  		'crawler.api.service.fetch'
+	}
     }
+//    configure(jar.manifest) {
+//	version = '0.1'
+//	name = 'FetchAPIBundle'
+//	symbolicName = 'FetchAPIBundle'
+//	jar.archiveName = "FetchAPIBundle.jar"
+//	instruction 'Export-Package' , 
+//		'crawler.api.service.fetch'
+//    }
 }
 
 project(':sinaWeiboFetchAPIBundle') {
@@ -67,20 +84,22 @@ project(':sinaWeiboFetchAPIBundle') {
         compile project(':OAuthAPIBundle')
         compile project(':FetchAPIBundle')
     }
-    configure(jar.manifest) {
-	version = '0.1'
-	name = 'sinaWeiboFetchAPIBundle'
-	symbolicName = 'sinaWeiboFetchAPIBundle'
-	jar.archiveName = "sinaWeiboFetchAPIBundle.jar"
-	instruction 'Bundle-Activator', 'crawler.api.fetch.Activator'
-	instruction 'Import-Package' , 
+    jar {
+        manifest {
+	    version = '0.1'
+	    name = 'sinaWeiboFetchAPIBundle'
+	    symbolicName = 'sinaWeiboFetchAPIBundle'
+	    jar.archiveName = "sinaWeiboFetchAPIBundle.jar"
+	    instruction 'Bundle-Activator', 'crawler.api.fetch.Activator'
+	    instruction 'Import-Package' , 
 		'crawler.api.service.oauthAccess',
 		'crawler.api.service.fetch',
  		'org.osgi.framework;version="1.7.0"',
  		'org.osgi.util.tracker;version="1.5.1"'
-	instruction 'Require-Bundle' , 
+	    instruction 'Require-Bundle' , 
 		'ScribeOAuthAPIBundle',
 		'JSON-libBundle' 
+	}
     }
 }
 
@@ -94,19 +113,21 @@ project(':tencentWeiboFetchAPIBundle') {
         compile project(':OAuthAPIBundle')
         compile project(':FetchAPIBundle')
     }
-    configure(jar.manifest) {
-	version = '0.1'
-	name = 'tencentWeiboFetchAPIBundle'
-	symbolicName = 'tencentWeiboFetchAPIBundle'
-	jar.archiveName = "tencentWeiboFetchAPIBundle.jar"
-	instruction 'Bundle-Activator', 'crawler.api.fetch.Activator'
-	instruction 'Import-Package' , 
-		'crawler.api.service.oauthAccess',
-		'crawler.api.service.fetch',
- 		'org.osgi.framework;version="1.7.0"',
- 		'org.osgi.util.tracker;version="1.5.1"'
-	instruction 'Require-Bundle' , 
+    jar {
+        manifest {
+	    version = '0.1'
+	    name = 'tencentWeiboFetchAPIBundle'
+	    symbolicName = 'tencentWeiboFetchAPIBundle'
+	    jar.archiveName = "tencentWeiboFetchAPIBundle.jar"
+	    instruction 'Bundle-Activator', 'crawler.api.fetch.Activator'
+	    instruction 'Import-Package' , 
+	    	'crawler.api.service.oauthAccess',
+	    	'crawler.api.service.fetch',
+ 	    	'org.osgi.framework;version="1.7.0"',
+ 	    	'org.osgi.util.tracker;version="1.5.1"'
+	    instruction 'Require-Bundle' , 
 		'ScribeOAuthAPIBundle',
 		'JSON-libBundle' 
+	}
     }
 }

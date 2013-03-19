@@ -38,6 +38,24 @@ project(':ScribeOAuthAPIBundle') {
     }
 }
 
+project(':JedisBundle') {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        runtime 'redis.clients:jedis:2.0.0'
+    }
+    jar {
+//        manifest {
+//            version = '0.1'
+//            name = 'JedisBundle'
+//            symbolicName = 'JedisBundle'
+//            jar.archiveName = "JedisBundle.jar"
+//        }
+        from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
+    }
+}
+
 project(':OAuthAPIBundle') {
     dependencies {
         compile project(':ScribeOAuthAPIBundle')

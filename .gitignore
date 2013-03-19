@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 build/
 .gradle/
 .meta/
@@ -5,3 +6,16 @@ build/
 .classpath
 .project
 *.impl
+=======
+.classpath
+*.iml
+*.ipr
+*.iws
+.project
+.settings/
+.gradle/
+target/
+build/
+bin/
+tags
+>>>>>>> 69f5340aa683a3d13aa2e8f9111cc560519c940c

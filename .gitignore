@@ -1,2 +1,7 @@
 build/
 .gradle/
+.meta/
+.idea/
+.classpath
+.project
+*.impl

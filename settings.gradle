@@ -1,0 +1,6 @@
+include "OAuthAPIBundle",
+	"ScribeOAuthAPIBundle",
+	"JedisBundle",
+	"FetchAPIBundle",
+	"tencentWeiboFetchAPIBundle",
+	"sinaWeiboFetchAPIBundle"

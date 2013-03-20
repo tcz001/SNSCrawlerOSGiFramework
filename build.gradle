@@ -52,6 +52,7 @@ project(':JedisBundle') {
             symbolicName = 'JedisBundle'
             jar.archiveName = "JedisBundle.jar"
             instruction 'Export-Package' , 'redis.clients.*'
+	    instruction 'Import-Package' , '' 
         }
         from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     }
@@ -102,6 +103,7 @@ project(':sinaWeiboFetchAPIBundle') {
         compile project(':ScribeOAuthAPIBundle')
         compile project(':OAuthAPIBundle')
         compile project(':FetchAPIBundle')
+        compile project(':JedisBundle')
     }
     jar {
         manifest {
@@ -117,6 +119,7 @@ project(':sinaWeiboFetchAPIBundle') {
  		'org.osgi.util.tracker;version="1.5.1"'
 	    instruction 'Require-Bundle' , 
 		'ScribeOAuthAPIBundle',
+		'JedisBundle',
 		'JSON-libBundle' 
 	}
     }
@@ -131,6 +134,7 @@ project(':tencentWeiboFetchAPIBundle') {
         compile project(':ScribeOAuthAPIBundle')
         compile project(':OAuthAPIBundle')
         compile project(':FetchAPIBundle')
+        compile project(':JedisBundle')
     }
     jar {
         manifest {
@@ -146,6 +150,7 @@ project(':tencentWeiboFetchAPIBundle') {
  	    	'org.osgi.util.tracker;version="1.5.1"'
 	    instruction 'Require-Bundle' , 
 		'ScribeOAuthAPIBundle',
+		'JedisBundle',
 		'JSON-libBundle' 
 	}
     }

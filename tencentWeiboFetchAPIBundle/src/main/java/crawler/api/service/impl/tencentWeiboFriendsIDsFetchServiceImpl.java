@@ -33,6 +33,7 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
 		request.addQuerystringParameter("oauth_version", "2.a");
 		System.out.println(request.getCompleteUrl());
 		Response response = request.send();
+        request = null;
 		System.out.println("Got it! Lets see what we found...");
 		System.out.println(response.getCode());
 		System.out.println(response.getBody());

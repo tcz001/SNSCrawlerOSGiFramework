@@ -3,4 +3,5 @@ include "OAuthAPIBundle",
 	"JedisBundle",
 	"FetchAPIBundle",
 	"tencentWeiboFetchAPIBundle",
-	"sinaWeiboFetchAPIBundle"
+	"sinaWeiboFetchAPIBundle",
+    "FetchClientBundle"

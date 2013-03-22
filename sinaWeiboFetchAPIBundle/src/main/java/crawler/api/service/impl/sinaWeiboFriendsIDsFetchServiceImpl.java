@@ -32,6 +32,7 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
                 GET_FRIENDS_IDs_URL);
         oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
         Response response = request.send();
+        request = null;
         System.out.println("Got it! Lets see what we found...");
         System.out.println();
         System.out.println(response.getCode());
@@ -77,6 +78,8 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
                 System.out.println(response.getCode());
                 json = JSONObject.fromObject(response.getBody());
                 jedis.hset("uid:" + follower_id.toString(), "time_line", json.toString());
+                request = null;
+                System.gc();
             }
         }
     }

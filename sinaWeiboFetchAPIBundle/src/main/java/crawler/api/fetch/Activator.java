@@ -36,7 +36,6 @@ public class Activator implements BundleActivator {
 
 		if(crawlerService != null) {
 			crawlerService.init();
-			crawlerService.fetch();
 		}
 	}
 	

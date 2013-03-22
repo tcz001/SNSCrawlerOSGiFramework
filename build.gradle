@@ -155,3 +155,28 @@ project(':tencentWeiboFetchAPIBundle') {
 	}
     }
 }
+
+project(':FetchClientBundle') {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        compile project(':sinaWeiboFetchAPIBundle')
+        compile project(':tencentWeiboFetchAPIBundle')
+    }
+    jar {
+        manifest {
+            version = '0.1'
+            name = 'FetchClientBundle'
+            symbolicName = 'FetchClientBundle'
+            jar.archiveName = "FetchClientBundle.jar"
+            instruction 'Bundle-Activator', 'crawler.client.fetch.Activator'
+            instruction 'Import-Package' ,
+                    'org.osgi.framework;version="1.7.0"',
+                    'org.osgi.util.tracker;version="1.5.1"'
+            instruction 'Require-Bundle' ,
+                    'sinaWeiboFetchAPIBundle',
+                    'tencentWeiboFetchAPIBundle'
+        }
+    }
+}

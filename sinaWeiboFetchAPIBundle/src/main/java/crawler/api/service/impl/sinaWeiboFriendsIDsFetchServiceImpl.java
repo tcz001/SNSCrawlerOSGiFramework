@@ -42,7 +42,7 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         response = null;
         for (Object id : json.getJSONArray("ids")) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -64,7 +64,7 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
             jedis.hset("uid:" + id.toString(), "followers_ids", json.getJSONArray("ids").toString());
             for (Object follower_id : json.getJSONArray("ids")) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

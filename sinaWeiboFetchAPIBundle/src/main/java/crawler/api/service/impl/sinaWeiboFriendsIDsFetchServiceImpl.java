@@ -15,7 +15,8 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
     JSONObject json;
     OAuthimpl oAuthimpl;
     Jedis jedis;
-
+    Response response;
+    OAuthRequest request;
 
     @Override
     public void init() {
@@ -28,16 +29,17 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
     public void fetch() {
         // Now let's go and ask for a protected resource!
         System.out.println("Now we're going to access a friends Idlist...");
-        OAuthRequest request = new OAuthRequest(Verb.GET,
+        request = new OAuthRequest(Verb.GET,
                 GET_FRIENDS_IDs_URL);
         oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
-        Response response = request.send();
+        response = request.send();
         request = null;
         System.out.println("Got it! Lets see what we found...");
         System.out.println();
         System.out.println(response.getCode());
         System.out.println(response.getBody());
         json = JSONObject.fromObject(response.getBody());
+        response = null;
         for (Object id : json.getJSONArray("ids")) {
             try {
                 Thread.sleep(1000);
@@ -53,10 +55,12 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
             oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
             request.addQuerystringParameter("uid", id.toString());
             response = request.send();
+            request = null;
             System.out.println("Got it! Lets see what we found...");
             System.out.println();
             System.out.println(response.getCode());
             json = JSONObject.fromObject(response.getBody());
+            response = null;
             jedis.hset("uid:" + id.toString(), "followers_ids", json.getJSONArray("ids").toString());
             for (Object follower_id : json.getJSONArray("ids")) {
                 try {
@@ -66,22 +70,26 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
                     e.printStackTrace();
                 }
                 System.out.print("Now crawler at the id : ");
-                System.out.println(id.toString());
+                System.out.println(follower_id.toString());
                 System.out.println("------------Getting--Follows--IDs---------------");
                 request = new OAuthRequest(Verb.GET,
                         GET_STATUS_BY_ID_URL);
                 oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
                 request.addQuerystringParameter("uid", id.toString());
                 response = request.send();
+                request = null;
                 System.out.println("Got it! Lets see what we found...");
                 System.out.println();
                 System.out.println(response.getCode());
                 json = JSONObject.fromObject(response.getBody());
                 jedis.hset("uid:" + follower_id.toString(), "time_line", json.toString());
-                request = null;
+                json = null;
+                response = null;
                 System.gc();
             }
+            json = null;
         }
+        json = null;
     }
 
     @Override

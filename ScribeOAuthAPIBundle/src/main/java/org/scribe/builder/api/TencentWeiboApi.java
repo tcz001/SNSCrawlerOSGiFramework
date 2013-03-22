@@ -5,7 +5,7 @@ import org.scribe.model.*;
 import org.scribe.utils.*;
 
 /**
- * SinaWeibo OAuth 2.0 api.
+ * TencentWeibo OAuth 2.0 api.
  */
 public class TencentWeiboApi extends DefaultApi20
 {

@@ -1,5 +1,6 @@
 package crawler.api.service.impl;
 
+import org.scribe.exceptions.OAuthConnectionException;
 import org.scribe.model.OAuthRequest;
 import org.scribe.model.Response;
 import org.scribe.model.Verb;
@@ -42,7 +43,7 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         response = null;
         for (Object id : json.getJSONArray("ids")) {
             try {
-                Thread.sleep(10000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -64,7 +65,7 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
             jedis.hset("uid:" + id.toString(), "followers_ids", json.getJSONArray("ids").toString());
             for (Object follower_id : json.getJSONArray("ids")) {
                 try {
-                    Thread.sleep(10000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -72,24 +73,32 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
                 System.out.print("Now crawler at the id : ");
                 System.out.println(follower_id.toString());
                 System.out.println("------------Getting--Follows--IDs---------------");
-                request = new OAuthRequest(Verb.GET,
-                        GET_STATUS_BY_ID_URL);
-                oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
-                request.addQuerystringParameter("uid", id.toString());
-                response = request.send();
-                request = null;
-                System.out.println("Got it! Lets see what we found...");
-                System.out.println();
-                System.out.println(response.getCode());
-                json = JSONObject.fromObject(response.getBody());
-                jedis.hset("uid:" + follower_id.toString(), "time_line", json.toString());
-                json = null;
-                response = null;
-                System.gc();
+                fetch_timeline_by_id(id,follower_id);
             }
             json = null;
         }
         json = null;
+    }
+
+    private void fetch_timeline_by_id(Object uid,Object fid){
+        try{
+            request = new OAuthRequest(Verb.GET,
+                    GET_STATUS_BY_ID_URL);
+            oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
+            request.addQuerystringParameter("uid", uid.toString());
+            response = request.send();
+            request = null;
+            System.out.println("Got it! Lets see what we found...");
+            System.out.println();
+            System.out.println(response.getCode());
+            json = JSONObject.fromObject(response.getBody());
+            jedis.hset("uid:" + fid.toString(), "time_line", json.toString());
+            json = null;
+            response = null;
+            System.gc();
+        } catch (OAuthConnectionException o) {
+            fetch_timeline_by_id(uid, fid);
+        }
     }
 
     @Override

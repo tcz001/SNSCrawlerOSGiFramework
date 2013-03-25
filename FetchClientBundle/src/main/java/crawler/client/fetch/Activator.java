@@ -1,6 +1,7 @@
 package crawler.client.fetch;
 
 import crawler.api.service.SinaWeiboFetchService;
+import crawler.api.service.TencentWeiboFetchService;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.util.tracker.ServiceTracker;
@@ -14,7 +15,8 @@ import org.osgi.util.tracker.ServiceTracker;
 public class Activator implements BundleActivator {
 
     private ServiceTracker<?, ?> crawlerServiceTracker;
-    private SinaWeiboFetchService crawlerService;
+    private SinaWeiboFetchService sinaWeiboFetchService;
+    private TencentWeiboFetchService tencentWeiboFetchService;
 
     public void start(BundleContext context) throws Exception {
     // create a tracker and track the log service
@@ -23,22 +25,23 @@ public class Activator implements BundleActivator {
     crawlerServiceTracker.open();
 
     // grab the service
-    crawlerService = (SinaWeiboFetchService) crawlerServiceTracker.getService();
+    sinaWeiboFetchService = (SinaWeiboFetchService) crawlerServiceTracker.getService();
 
-    if(crawlerService != null) {
-        crawlerService.fetch();
+    if(sinaWeiboFetchService != null) {
+        Thread sina = new Thread(sinaWeiboFetchService);
+        sina.start();
     }
 }
 
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
-            if(crawlerService != null)
-                crawlerService.log();
+            if(sinaWeiboFetchService != null)
+                sinaWeiboFetchService.log();
 
             // close the service tracker
             crawlerServiceTracker.close();
             crawlerServiceTracker = null;
 
-            crawlerService = null;
+            sinaWeiboFetchService = null;
     }
 }

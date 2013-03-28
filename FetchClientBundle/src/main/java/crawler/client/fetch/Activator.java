@@ -17,6 +17,7 @@ public class Activator implements BundleActivator {
     private ServiceTracker<?, ?> crawlerServiceTracker;
     private SinaWeiboFetchService sinaWeiboFetchService;
     private TencentWeiboFetchService tencentWeiboFetchService;
+    Thread sina,tencent;
 
     public void start(BundleContext context) throws Exception {
         // create a tracker and track the log service
@@ -28,7 +29,7 @@ public class Activator implements BundleActivator {
         sinaWeiboFetchService = (SinaWeiboFetchService) crawlerServiceTracker.getService();
 
         if (sinaWeiboFetchService != null) {
-            Thread sina = new Thread(sinaWeiboFetchService);
+            sina = new Thread(sinaWeiboFetchService);
             sina.start();
         }
 
@@ -40,20 +41,23 @@ public class Activator implements BundleActivator {
         // grab the service
         tencentWeiboFetchService = (TencentWeiboFetchService) crawlerServiceTracker.getService();
         if (tencentWeiboFetchService != null) {
-            Thread tencent = new Thread(tencentWeiboFetchService);
+            tencent = new Thread(tencentWeiboFetchService);
             tencent.start();
         }
     }
 
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
-        if (sinaWeiboFetchService != null)
-            sinaWeiboFetchService.log();
+        if (sinaWeiboFetchService != null && sina!=null)
+            sina.interrupt();
+        if (tencentWeiboFetchService != null && tencent!=null)
+            tencent.interrupt();
 
         // close the service tracker
         crawlerServiceTracker.close();
         crawlerServiceTracker = null;
 
         sinaWeiboFetchService = null;
+        tencentWeiboFetchService = null;
     }
 }

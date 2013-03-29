@@ -161,6 +161,7 @@ project(':FetchClientBundle') {
         mavenCentral()
     }
     dependencies {
+	//compile 'org.apache.felix:org.apache.felix.http.bundle:2.2.0'
         compile project(':sinaWeiboFetchAPIBundle')
         compile project(':tencentWeiboFetchAPIBundle')
     }
@@ -178,5 +179,6 @@ project(':FetchClientBundle') {
                     'sinaWeiboFetchAPIBundle',
                     'tencentWeiboFetchAPIBundle'
         }
+	//from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
     }
 }

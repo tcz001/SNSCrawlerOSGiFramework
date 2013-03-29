@@ -18,8 +18,11 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
     Response response;
     OAuthRequest request;
 
+    volatile boolean stop = false;
+
     @Override
     public void init() {
+        stop = false;
         oAuthimpl = new OAuthimpl();
         oAuthimpl.getToken();
         jedis = new Jedis("localhost");
@@ -28,7 +31,9 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
     @Override
     public void fetch() {
         for (Object data : fetch_datas()) {
-            for (Object fdata : fetch_fdatas_by_data((JSONObject) data)){
+            if (stop) return;
+            for (Object fdata : fetch_fdatas_by_data((JSONObject) data)) {
+                if (stop) return;
                 fetch_timeline_by_fdata((JSONObject) fdata);
             }
         }
@@ -36,7 +41,6 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
     }
 
     private JSONArray fetch_datas() {
-        // Now let's go and ask for a protected resource!
         System.out.println("Now we're going to access a protected resource...");
         request = new OAuthRequest(Verb.GET,
                 GET_FRIENDS_IDs_URL);
@@ -45,12 +49,8 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         request.addQuerystringParameter("oauth_consumer_key", oAuthimpl.apiKey);
         request.addQuerystringParameter("openid", oAuthimpl.client_id);
         request.addQuerystringParameter("oauth_version", "2.a");
-        System.out.println(request.getCompleteUrl());
+        request.getCompleteUrl();
         response = request.send();
-        request = null;
-        System.out.println("Got it! Lets see what we found...");
-        System.out.println(response.getCode());
-        System.out.println(response.getBody());
         json = JSONObject.fromObject(response.getBody());
         return json.getJSONObject("data").getJSONArray("info");
     }
@@ -65,7 +65,6 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         String id = data.get("openid").toString();
         System.out.print("Now crawler at the id : ");
         System.out.println(id);
-        System.out.println("------------Getting--Follows--IDs---------------");
         request = new OAuthRequest(Verb.GET,
                 GET_FOLLOWERS_IDs_URL);
         oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
@@ -74,13 +73,14 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         request.addQuerystringParameter("oauth_consumer_key", oAuthimpl.apiKey);
         request.addQuerystringParameter("openid", oAuthimpl.client_id);
         request.addQuerystringParameter("oauth_version", "2.a");
-        System.out.println(request.getCompleteUrl());
+        request.getCompleteUrl();
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
         return json.getJSONObject("data").getJSONArray("info");
     }
 
     private void fetch_timeline_by_fdata(JSONObject fdata) {
+        if (stop) return;
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -89,7 +89,7 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         }
         String fid = fdata.get("openid").toString();
         System.out.print("Now crawler at the id : ");
-        System.out.println(fid.toString());
+        System.out.println(fid);
         request = new OAuthRequest(Verb.GET,
                 GET_STATUS_BY_ID_URL);
         oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
@@ -98,7 +98,7 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         request.addQuerystringParameter("oauth_consumer_key", oAuthimpl.apiKey);
         request.addQuerystringParameter("openid", oAuthimpl.client_id);
         request.addQuerystringParameter("oauth_version", "2.a");
-        System.out.println(request.getCompleteUrl());
+        request.getCompleteUrl();
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
         jedis.hset("uid:" + fid, "time_line", json.toString());
@@ -106,6 +106,11 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
 
     @Override
     public void log() {
+    }
+
+    @Override
+    public void stop() {
+        stop = true;
     }
 
     /**
@@ -122,5 +127,6 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
     @Override
     public void run() {
         fetch();
+        System.out.println("Tencent exiting under request...");
     }
 }

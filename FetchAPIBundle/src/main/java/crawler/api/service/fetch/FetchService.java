@@ -6,4 +6,6 @@ public interface FetchService {
 	public void fetch();
 
 	public void log();
+
+    void stop();
 }

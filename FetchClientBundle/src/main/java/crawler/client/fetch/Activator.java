@@ -49,9 +49,9 @@ public class Activator implements BundleActivator {
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
         if (sinaWeiboFetchService != null && sina!=null)
-            sina.interrupt();
+            sinaWeiboFetchService.stop();
         if (tencentWeiboFetchService != null && tencent!=null)
-            tencent.interrupt();
+            tencentWeiboFetchService.stop();
 
         // close the service tracker
         crawlerServiceTracker.close();

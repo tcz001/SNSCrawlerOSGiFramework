@@ -9,7 +9,7 @@ import net.sf.json.*;
 import crawler.api.service.SinaWeiboFetchService;
 import redis.clients.jedis.*;
 
-public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService,Runnable {
+public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService, Runnable {
     private static final String GET_FRIENDS_IDs_URL = "https://api.weibo.com/2/friendships/friends/ids.json";
     private static final String GET_FOLLOWERS_IDs_URL = "https://api.weibo.com/2/friendships/followers/ids.json";
     private static final String GET_STATUS_BY_ID_URL = "https://api.weibo.com/2/statuses/user_timeline.json";
@@ -19,8 +19,11 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
     Response response;
     OAuthRequest request;
 
+    volatile boolean stop = false;
+
     @Override
     public void init() {
+        stop = false;
         oAuthimpl = new OAuthimpl();
         oAuthimpl.getToken();
         jedis = new Jedis("localhost");
@@ -29,7 +32,9 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
     @Override
     public void fetch() {
         for (Object id : fetch_ids()) {
+            if (stop) return;
             for (Object follower_id : fetch_fids_by_id(id)) {
+                if (stop) return;
                 fetch_timeline_by_fid(follower_id);
             }
         }
@@ -42,38 +47,33 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
                 GET_FRIENDS_IDs_URL);
         oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
         response = request.send();
-        request = null;
         System.out.println("Got it! Lets see what we found...");
         json = JSONObject.fromObject(response.getBody());
-        response = null;
         return json.getJSONArray("ids");
     }
 
     private JSONArray fetch_fids_by_id(Object id) {
         try {
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
         System.out.print("Now crawler at the id : ");
         System.out.println(id.toString());
-        System.out.println("------------Getting--Follows--IDs---------------");
         request = new OAuthRequest(Verb.GET,
                 GET_FOLLOWERS_IDs_URL);
         oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
         request.addQuerystringParameter("uid", id.toString());
         response = request.send();
-        request = null;
-        System.out.println(response.getCode());
         json = JSONObject.fromObject(response.getBody());
-        response = null;
         JSONArray ids = json.getJSONArray("ids");
         jedis.hset("uid:" + id.toString(), "followers_ids", ids.toString());
         return ids;
     }
 
     private void fetch_timeline_by_fid(Object fid) {
+        if (stop) return;
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -88,13 +88,9 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
             oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
             request.addQuerystringParameter("uid", fid.toString());
             response = request.send();
-            request = null;
             if (response.getCode() == 200) {
                 json = JSONObject.fromObject(response.getBody());
                 jedis.hset("uid:" + fid.toString(), "time_line", json.toString());
-                json = null;
-                response = null;
-                System.gc();
             } else fetch_timeline_by_fid(fid);
         } catch (OAuthConnectionException o) {
             fetch_timeline_by_fid(fid);
@@ -103,6 +99,11 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
 
     @Override
     public void log() {
+    }
+
+    @Override
+    public void stop() {
+        stop = true;
     }
 
     /**
@@ -119,5 +120,6 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
     @Override
     public void run() {
         fetch();
+        System.out.println("Sina exiting under request...");
     }
 }

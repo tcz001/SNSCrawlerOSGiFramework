@@ -28,6 +28,14 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
 
     @Override
     public void fetch() {
+        for (Object id : fetch_ids()) {
+            for (Object follower_id : fetch_fids_by_id(id)) {
+                fetch_timeline_by_fid(follower_id);
+            }
+        }
+    }
+
+    private JSONArray fetch_ids() {
         // Now let's go and ask for a protected resource!
         System.out.println("Now we're going to access a friends Idlist...");
         request = new OAuthRequest(Verb.GET,
@@ -38,48 +46,47 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         System.out.println("Got it! Lets see what we found...");
         json = JSONObject.fromObject(response.getBody());
         response = null;
-        for (Object id : json.getJSONArray("ids")) {
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            System.out.print("Now crawler at the id : ");
-            System.out.println(id.toString());
-            System.out.println("------------Getting--Follows--IDs---------------");
-            request = new OAuthRequest(Verb.GET,
-                    GET_FOLLOWERS_IDs_URL);
-            oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
-            request.addQuerystringParameter("uid", id.toString());
-            response = request.send();
-            request = null;
-            System.out.println(response.getCode());
-            json = JSONObject.fromObject(response.getBody());
-            response = null;
-            jedis.hset("uid:" + id.toString(), "followers_ids", json.getJSONArray("ids").toString());
-            for (Object follower_id : json.getJSONArray("ids")) {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                System.out.print("Now crawler at the id : ");
-                System.out.println(follower_id.toString());
-                fetch_timeline_by_id(id, follower_id);
-            }
-            json = null;
-        }
-        json = null;
+        return json.getJSONArray("ids");
     }
 
-    private void fetch_timeline_by_id(Object uid, Object fid) {
+    private JSONArray fetch_fids_by_id(Object id) {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        System.out.print("Now crawler at the id : ");
+        System.out.println(id.toString());
+        System.out.println("------------Getting--Follows--IDs---------------");
+        request = new OAuthRequest(Verb.GET,
+                GET_FOLLOWERS_IDs_URL);
+        oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
+        request.addQuerystringParameter("uid", id.toString());
+        response = request.send();
+        request = null;
+        System.out.println(response.getCode());
+        json = JSONObject.fromObject(response.getBody());
+        response = null;
+        JSONArray ids = json.getJSONArray("ids");
+        jedis.hset("uid:" + id.toString(), "followers_ids", ids.toString());
+        return ids;
+    }
+
+    private void fetch_timeline_by_fid(Object fid) {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        System.out.print("Now crawler at the id : ");
+        System.out.println(fid.toString());
         try {
             request = new OAuthRequest(Verb.GET,
                     GET_STATUS_BY_ID_URL);
             oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
-            request.addQuerystringParameter("uid", uid.toString());
+            request.addQuerystringParameter("uid", fid.toString());
             response = request.send();
             request = null;
             if (response.getCode() == 200) {
@@ -88,9 +95,9 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
                 json = null;
                 response = null;
                 System.gc();
-            } else fetch_timeline_by_id(uid, fid);
+            } else fetch_timeline_by_fid(fid);
         } catch (OAuthConnectionException o) {
-            fetch_timeline_by_id(uid, fid);
+            fetch_timeline_by_fid(fid);
         }
     }
 

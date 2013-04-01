@@ -149,9 +149,9 @@ public class OsgiManager extends GenericServlet
 
     static final String DEFAULT_REALM = "OSGi Management Console"; //$NON-NLS-1$
 
-    static final String DEFAULT_USER_NAME = "admin"; //$NON-NLS-1$
+    static final String DEFAULT_USER_NAME = ""; //$NON-NLS-1$
 
-    static final String DEFAULT_PASSWORD = "admin"; //$NON-NLS-1$
+    static final String DEFAULT_PASSWORD = ""; //$NON-NLS-1$
 
     static final String DEFAULT_HTTP_SERVICE_SELECTOR = ""; //$NON-NLS-1$
 

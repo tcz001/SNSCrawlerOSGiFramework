@@ -26,7 +26,7 @@ public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         stop = false;
         jedis = new Jedis("localhost");
         tencentOAuthImpl = new TencentOAuthImpl();
-        if (jedis.get("tencent:Token:token")!=null)
+        if (jedis.get("tencent:Token:token") != null)
             tencentOAuthImpl.accessToken = new Token(jedis.get("tencent:Token:token"), jedis.get("tencent:Token:secret"));
         else {
             tencentOAuthImpl.fetchToken();
@@ -134,6 +134,7 @@ public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
      */
     @Override
     public void run() {
+        stop = false;
         fetch();
         System.out.println("Tencent exiting under request...");
     }

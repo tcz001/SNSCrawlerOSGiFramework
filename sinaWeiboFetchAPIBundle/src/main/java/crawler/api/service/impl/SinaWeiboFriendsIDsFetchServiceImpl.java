@@ -127,6 +127,7 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
      */
     @Override
     public void run() {
+        stop = false;
         fetch();
         System.out.println("Sina exiting under request...");
     }

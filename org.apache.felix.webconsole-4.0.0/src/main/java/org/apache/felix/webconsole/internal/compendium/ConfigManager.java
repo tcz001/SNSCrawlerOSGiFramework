@@ -789,7 +789,7 @@ public class ConfigManager extends ConfigManagerBase
         try
         {
             final ServiceReference[] refs = getBundleContext().getServiceReferences(
-                null,
+                    (String) null,
                 "(&(" + Constants.OBJECTCLASS + '=' + ManagedService.class.getName()
                     + ")(" + Constants.SERVICE_PID + '=' + pid + "))");
             if ( refs != null && refs.length > 0 )

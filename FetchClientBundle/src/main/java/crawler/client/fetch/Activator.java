@@ -30,7 +30,7 @@ public class Activator implements BundleActivator {
 
         if (sinaWeiboFetchService != null) {
             sina = new Thread(sinaWeiboFetchService);
-            sina.start();
+//            sina.start();
         }
 
         // create a tracker and track the log service
@@ -42,16 +42,16 @@ public class Activator implements BundleActivator {
         tencentWeiboFetchService = (TencentWeiboFetchService) crawlerServiceTracker.getService();
         if (tencentWeiboFetchService != null) {
             tencent = new Thread(tencentWeiboFetchService);
-            tencent.start();
+//            tencent.start();
         }
     }
 
     @Override
     public void stop(BundleContext bundleContext) throws Exception {
         if (sinaWeiboFetchService != null && sina!=null)
-            sinaWeiboFetchService.stop();
+//            sinaWeiboFetchService.stop();
         if (tencentWeiboFetchService != null && tencent!=null)
-            tencentWeiboFetchService.stop();
+//            tencentWeiboFetchService.stop();
 
         // close the service tracker
         crawlerServiceTracker.close();

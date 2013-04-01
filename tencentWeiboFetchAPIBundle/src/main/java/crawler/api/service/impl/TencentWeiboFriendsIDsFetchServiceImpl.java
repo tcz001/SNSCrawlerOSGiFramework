@@ -2,18 +2,19 @@ package crawler.api.service.impl;
 
 import org.scribe.model.OAuthRequest;
 import org.scribe.model.Response;
+import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import net.sf.json.*;
 
 import crawler.api.service.TencentWeiboFetchService;
 import redis.clients.jedis.*;
 
-public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetchService, Runnable {
+public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetchService, Runnable {
     private static final String GET_FRIENDS_IDs_URL = "https://open.t.qq.com/api/friends/idollist_name";
     private static final String GET_FOLLOWERS_IDs_URL = "https://open.t.qq.com/api/friends/fanslist_s";
     private static final String GET_STATUS_BY_ID_URL = "https://open.t.qq.com/api/statuses/user_timeline";
     JSONObject json;
-    OAuthimpl oAuthimpl;
+    TencentOAuthImpl tencentOAuthImpl;
     Jedis jedis;
     Response response;
     OAuthRequest request;
@@ -23,9 +24,16 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
     @Override
     public void init() {
         stop = false;
-        oAuthimpl = new OAuthimpl();
-        oAuthimpl.getToken();
         jedis = new Jedis("localhost");
+        tencentOAuthImpl = new TencentOAuthImpl();
+        if (jedis.get("tencent:Token:token")!=null)
+            tencentOAuthImpl.accessToken = new Token(jedis.get("tencent:Token:token"), jedis.get("tencent:Token:secret"));
+        else {
+            tencentOAuthImpl.fetchToken();
+            Token token = tencentOAuthImpl.getToken();
+            jedis.set("tencent:Token:token", token.getToken());
+            jedis.set("tencent:Token:secret", token.getSecret());
+        }
     }
 
     @Override
@@ -44,10 +52,10 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         System.out.println("Now we're going to access a protected resource...");
         request = new OAuthRequest(Verb.GET,
                 GET_FRIENDS_IDs_URL);
-        oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
+        tencentOAuthImpl.service.signRequest(tencentOAuthImpl.accessToken, request);
         request.addQuerystringParameter("format", "json");
-        request.addQuerystringParameter("oauth_consumer_key", oAuthimpl.apiKey);
-        request.addQuerystringParameter("openid", oAuthimpl.client_id);
+        request.addQuerystringParameter("oauth_consumer_key", tencentOAuthImpl.apiKey);
+        request.addQuerystringParameter("openid", tencentOAuthImpl.client_id);
         request.addQuerystringParameter("oauth_version", "2.a");
         request.getCompleteUrl();
         response = request.send();
@@ -67,11 +75,11 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         System.out.println(id);
         request = new OAuthRequest(Verb.GET,
                 GET_FOLLOWERS_IDs_URL);
-        oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
+        tencentOAuthImpl.service.signRequest(tencentOAuthImpl.accessToken, request);
         request.addQuerystringParameter("format", "json");
         request.addQuerystringParameter("fopenid", id);
-        request.addQuerystringParameter("oauth_consumer_key", oAuthimpl.apiKey);
-        request.addQuerystringParameter("openid", oAuthimpl.client_id);
+        request.addQuerystringParameter("oauth_consumer_key", tencentOAuthImpl.apiKey);
+        request.addQuerystringParameter("openid", tencentOAuthImpl.client_id);
         request.addQuerystringParameter("oauth_version", "2.a");
         request.getCompleteUrl();
         response = request.send();
@@ -92,11 +100,11 @@ public class tencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         System.out.println(fid);
         request = new OAuthRequest(Verb.GET,
                 GET_STATUS_BY_ID_URL);
-        oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
+        tencentOAuthImpl.service.signRequest(tencentOAuthImpl.accessToken, request);
         request.addQuerystringParameter("format", "json");
         request.addQuerystringParameter("fopenid", fid);
-        request.addQuerystringParameter("oauth_consumer_key", oAuthimpl.apiKey);
-        request.addQuerystringParameter("openid", oAuthimpl.client_id);
+        request.addQuerystringParameter("oauth_consumer_key", tencentOAuthImpl.apiKey);
+        request.addQuerystringParameter("openid", tencentOAuthImpl.client_id);
         request.addQuerystringParameter("oauth_version", "2.a");
         request.getCompleteUrl();
         response = request.send();

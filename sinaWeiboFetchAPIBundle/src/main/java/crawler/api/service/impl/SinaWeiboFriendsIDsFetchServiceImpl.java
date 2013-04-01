@@ -3,18 +3,19 @@ package crawler.api.service.impl;
 import org.scribe.exceptions.OAuthConnectionException;
 import org.scribe.model.OAuthRequest;
 import org.scribe.model.Response;
+import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import net.sf.json.*;
 
 import crawler.api.service.SinaWeiboFetchService;
 import redis.clients.jedis.*;
 
-public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService, Runnable {
+public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService, Runnable {
     private static final String GET_FRIENDS_IDs_URL = "https://api.weibo.com/2/friendships/friends/ids.json";
     private static final String GET_FOLLOWERS_IDs_URL = "https://api.weibo.com/2/friendships/followers/ids.json";
     private static final String GET_STATUS_BY_ID_URL = "https://api.weibo.com/2/statuses/user_timeline.json";
     JSONObject json;
-    OAuthimpl oAuthimpl;
+    SinaOAuthImpl sinaOAuthImpl;
     Jedis jedis;
     Response response;
     OAuthRequest request;
@@ -24,9 +25,16 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
     @Override
     public void init() {
         stop = false;
-        oAuthimpl = new OAuthimpl();
-        oAuthimpl.getToken();
         jedis = new Jedis("localhost");
+        sinaOAuthImpl = new SinaOAuthImpl();
+        if (jedis.get("sina:Token:token")!=null)
+            sinaOAuthImpl.accessToken = new Token(jedis.get("sina:Token:token"), jedis.get("sina:Token:secret"));
+        else {
+            sinaOAuthImpl.fetchToken();
+            Token token = sinaOAuthImpl.getToken();
+            jedis.set("sina:Token:token", token.getToken());
+            jedis.set("sina:Token:secret", token.getSecret());
+        }
     }
 
     @Override
@@ -45,7 +53,7 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         System.out.println("Now we're going to access a friends Idlist...");
         request = new OAuthRequest(Verb.GET,
                 GET_FRIENDS_IDs_URL);
-        oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
+        sinaOAuthImpl.service.signRequest(sinaOAuthImpl.accessToken, request);
         response = request.send();
         System.out.println("Got it! Lets see what we found...");
         json = JSONObject.fromObject(response.getBody());
@@ -63,7 +71,7 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         System.out.println(id.toString());
         request = new OAuthRequest(Verb.GET,
                 GET_FOLLOWERS_IDs_URL);
-        oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
+        sinaOAuthImpl.service.signRequest(sinaOAuthImpl.accessToken, request);
         request.addQuerystringParameter("uid", id.toString());
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
@@ -85,7 +93,7 @@ public class sinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         try {
             request = new OAuthRequest(Verb.GET,
                     GET_STATUS_BY_ID_URL);
-            oAuthimpl.service.signRequest(oAuthimpl.accessToken, request);
+            sinaOAuthImpl.service.signRequest(sinaOAuthImpl.accessToken, request);
             request.addQuerystringParameter("uid", fid.toString());
             response = request.send();
             if (response.getCode() == 200) {

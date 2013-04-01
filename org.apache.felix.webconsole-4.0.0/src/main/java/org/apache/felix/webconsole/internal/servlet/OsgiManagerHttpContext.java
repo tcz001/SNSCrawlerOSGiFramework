@@ -55,8 +55,8 @@ final class OsgiManagerHttpContext implements HttpContext
         final String password, final String realm )
     {
         this.tracker = tracker;
-        this.username = "";//username;
-        this.password = "";//password;
+        this.username = username;
+        this.password = password;
         this.realm = realm;
         this.base = httpService.createDefaultHttpContext();
     }

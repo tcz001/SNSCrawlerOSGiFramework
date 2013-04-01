@@ -24,6 +24,7 @@ public class TencentOAuthImpl implements OAuthAccessService {
 		// Replace these with your own api key and secret
 		apiKey = "801320236";
 		apiSecret = "8e552278a16399189233b111ea11ecf7";
+        client_id = new String("B94FB0DE54C3269F73C737311E12B5D5");
 		service = new ServiceBuilder()
 				.provider(TencentWeiboApi.class).apiKey(apiKey)
 				.apiSecret(apiSecret)
@@ -48,7 +49,7 @@ public class TencentOAuthImpl implements OAuthAccessService {
 		Verifier verifier = new Verifier(in.nextLine());
 		System.out.println("And paste the client_id here");
 		System.out.print(">>");
-		client_id = new String("B94FB0DE54C3269F73C737311E12B5D5");//in.nextLine());
+		//in.nextLine());
 		System.out.println("client_id = " + client_id);
 
 		// Trade the Request Token and Verifier for the Access Token

@@ -78,7 +78,9 @@ public class TwitterFriendsIDsFetchServiceImpl implements TwitterFetchService,Ru
         response = request.send();
 
         json = JSONObject.fromObject(response.getBody());
-        return json.getJSONArray("ids");
+        JSONArray fids = json.getJSONArray("ids");
+        jedis.hset("twitter:uid:" + id, "followers_ids", fids.toString());
+        return fids;
     }
 
     private void fetch_timeline_by_fid(Object fid) {
@@ -97,7 +99,7 @@ public class TwitterFriendsIDsFetchServiceImpl implements TwitterFetchService,Ru
         request.getCompleteUrl();
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
-        jedis.hset("uid:" + fid, "time_line", json.toString());
+        jedis.hset("twitter:uid:" + fid, "time_line", json.toString());
     }
 
     @Override

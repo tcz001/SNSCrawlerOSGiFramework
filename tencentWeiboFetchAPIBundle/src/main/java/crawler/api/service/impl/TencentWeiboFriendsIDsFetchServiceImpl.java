@@ -84,7 +84,9 @@ public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         request.getCompleteUrl();
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
-        return json.getJSONObject("data").getJSONArray("info");
+        JSONArray fdatas = json.getJSONObject("data").getJSONArray("info");
+        jedis.hset("tencent:uid:" + id, "followers_ids", fdatas.toString());
+        return fdatas;
     }
 
     private void fetch_timeline_by_fdata(JSONObject fdata) {
@@ -109,7 +111,7 @@ public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         request.getCompleteUrl();
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
-        jedis.hset("uid:" + fid, "time_line", json.toString());
+        jedis.hset("tencent:uid:" + fid, "time_line", json.toString());
     }
 
     @Override

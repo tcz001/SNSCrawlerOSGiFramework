@@ -73,9 +73,9 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         request.addQuerystringParameter("uid", id.toString());
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
-        JSONArray ids = json.getJSONArray("ids");
-        jedis.hset("uid:" + id.toString(), "followers_ids", ids.toString());
-        return ids;
+        JSONArray fids = json.getJSONArray("ids");
+        jedis.hset("sina:uid:" + id.toString(), "followers_ids", fids.toString());
+        return fids;
     }
 
     private void fetch_timeline_by_fid(Object fid) {
@@ -95,7 +95,7 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
             response = request.send();
             if (response.getCode() == 200) {
                 json = JSONObject.fromObject(response.getBody());
-                jedis.hset("uid:" + fid.toString(), "time_line", json.toString());
+                jedis.hset("sina:uid:" + fid.toString(), "time_line", json.toString());
             } else fetch_timeline_by_fid(fid);
         } catch (OAuthConnectionException o) {
             fetch_timeline_by_fid(fid);

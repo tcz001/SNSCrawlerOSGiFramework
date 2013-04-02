@@ -1,6 +1,6 @@
 package crawler.api.service.fetch;
 
-public interface FetchService {
+public interface FetchService extends Runnable{
 	public void init();
 
 	public void fetch();

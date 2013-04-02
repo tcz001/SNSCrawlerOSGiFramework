@@ -10,7 +10,7 @@ import net.sf.json.*;
 import crawler.api.service.SinaWeiboFetchService;
 import redis.clients.jedis.*;
 
-public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService, Runnable {
+public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService{
     private static final String GET_FRIENDS_IDs_URL = "https://api.weibo.com/2/friendships/friends/ids.json";
     private static final String GET_FOLLOWERS_IDs_URL = "https://api.weibo.com/2/friendships/followers/ids.json";
     private static final String GET_STATUS_BY_ID_URL = "https://api.weibo.com/2/statuses/user_timeline.json";

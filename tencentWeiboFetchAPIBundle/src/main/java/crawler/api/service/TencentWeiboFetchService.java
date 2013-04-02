@@ -2,6 +2,6 @@ package crawler.api.service;
 
 import crawler.api.service.fetch.FetchService;
 
-public interface TencentWeiboFetchService extends FetchService,Runnable {
+public interface TencentWeiboFetchService extends FetchService{
 
 }

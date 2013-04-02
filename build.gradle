@@ -32,9 +32,9 @@ project(':ScribeOAuthAPIBundle') {
             symbolicName = 'ScribeOAuthAPIBundle'
             jar.archiveName = "ScribeOAuthAPIBundle.jar"
             instruction 'Export-Package' , 'org.scribe.*'
-	    instruction 'Import-Package' , '' 
+	    instruction 'Import-Package' , 'javax.crypto.*' 
 	}
-	from { configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) } }
+	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     }
 }
 

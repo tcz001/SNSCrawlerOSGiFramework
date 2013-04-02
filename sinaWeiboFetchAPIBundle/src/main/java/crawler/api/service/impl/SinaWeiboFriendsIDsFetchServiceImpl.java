@@ -51,8 +51,7 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
     private JSONArray fetch_ids() {
         // Now let's go and ask for a protected resource!
         System.out.println("Now we're going to access a friends Idlist...");
-        request = new OAuthRequest(Verb.GET,
-                GET_FRIENDS_IDs_URL);
+        request = new OAuthRequest(Verb.GET, GET_FRIENDS_IDs_URL);
         sinaOAuthImpl.service.signRequest(sinaOAuthImpl.accessToken, request);
         response = request.send();
         System.out.println("Got it! Lets see what we found...");
@@ -69,8 +68,7 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         }
         System.out.print("Now crawler at the id : ");
         System.out.println(id.toString());
-        request = new OAuthRequest(Verb.GET,
-                GET_FOLLOWERS_IDs_URL);
+        request = new OAuthRequest(Verb.GET, GET_FOLLOWERS_IDs_URL);
         sinaOAuthImpl.service.signRequest(sinaOAuthImpl.accessToken, request);
         request.addQuerystringParameter("uid", id.toString());
         response = request.send();
@@ -91,8 +89,7 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         System.out.print("Now crawler at the id : ");
         System.out.println(fid.toString());
         try {
-            request = new OAuthRequest(Verb.GET,
-                    GET_STATUS_BY_ID_URL);
+            request = new OAuthRequest(Verb.GET, GET_STATUS_BY_ID_URL);
             sinaOAuthImpl.service.signRequest(sinaOAuthImpl.accessToken, request);
             request.addQuerystringParameter("uid", fid.toString());
             response = request.send();

@@ -156,6 +156,37 @@ project(':tencentWeiboFetchAPIBundle') {
     }
 }
 
+project(':twitterFetchAPIBundle') {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        compile 'net.sf.json-lib:json-lib:2.4:jdk15'
+        compile project(':ScribeOAuthAPIBundle')
+        compile project(':OAuthAPIBundle')
+        compile project(':FetchAPIBundle')
+        compile project(':JedisBundle')
+    }
+    jar {
+        manifest {
+            version = '0.1'
+            name = 'twitterFetchAPIBundle'
+            symbolicName = 'twitterFetchAPIBundle'
+            jar.archiveName = "twitterFetchAPIBundle.jar"
+            instruction 'Bundle-Activator', 'crawler.api.fetch.Activator'
+            instruction 'Import-Package' ,
+                    'crawler.api.service.oauthAccess',
+                    'crawler.api.service.fetch',
+                    'org.osgi.framework;version="1.7.0"',
+                    'org.osgi.util.tracker;version="1.5.1"'
+            instruction 'Require-Bundle' ,
+                    'ScribeOAuthAPIBundle',
+                    'JedisBundle',
+                    'JSON-libBundle'
+        }
+    }
+}
+
 project(':FetchClientBundle') {
     repositories {
         mavenCentral()

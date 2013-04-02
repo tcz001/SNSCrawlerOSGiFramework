@@ -11,7 +11,6 @@ import java.util.*;
 
 public class TwitterOAuthImpl implements OAuthAccessService {
     private static final String NETWORK_NAME = "Twitter";
-    private static final Token EMPTY_TOKEN = null;
 
     String apiKey;
     String apiSecret;
@@ -52,7 +51,7 @@ public class TwitterOAuthImpl implements OAuthAccessService {
 
         // Trade the Request Token and Verifier for the Access Token
         System.out.println("Trading the Request Token for an Access Token...");
-        accessToken = service.getAccessToken(EMPTY_TOKEN, verifier);
+        accessToken = service.getAccessToken(request_Token, verifier);
         System.out.println("Got the Access Token!");
         System.out.println("(if your curious it looks like this: "
                 + accessToken + " )");

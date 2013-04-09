@@ -9,6 +9,8 @@ import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import redis.clients.jedis.Jedis;
 
+import java.util.HashSet;
+
 /**
  * Created with IntelliJ IDEA.
  * User: tcz
@@ -25,6 +27,7 @@ public class TwitterFriendsIDsFetchServiceImpl implements TwitterFetchService,Ru
     Jedis jedis;
     Response response;
     OAuthRequest request;
+    HashSet<String> accessedUidSet = new HashSet<String>();
 
     volatile boolean stop = false;
 
@@ -91,6 +94,7 @@ public class TwitterFriendsIDsFetchServiceImpl implements TwitterFetchService,Ru
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        if(accessedUidSet.contains(fid.toString())) return;
         System.out.print("Now crawler at the id : ");
         System.out.println(fid.toString());
         request = new OAuthRequest(Verb.GET, GET_STATUS_BY_ID_URL);
@@ -99,6 +103,7 @@ public class TwitterFriendsIDsFetchServiceImpl implements TwitterFetchService,Ru
         request.getCompleteUrl();
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
+        accessedUidSet.add(fid.toString());
         jedis.hset("twitter:uid:" + fid, "time_line", json.toString());
     }
 

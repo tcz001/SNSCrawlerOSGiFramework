@@ -1,0 +1,16 @@
+.key{
+    background: red;
+}
+.attr{
+    background: yellow;
+}
+.info{
+    background: blue;
+}
+.linenum{
+    background: green;
+}
+.weibo{
+    background: white;
+    position : relative;
+}

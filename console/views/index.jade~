@@ -1,0 +1,8 @@
+html
+   header
+      include header.jade
+   body
+      include banner.jade
+      include console.jade
+      //include list.jade
+      include footer.jade

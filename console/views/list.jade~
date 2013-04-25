@@ -1,0 +1,9 @@
+-for (key in value)
+ .key= key
+  -for (attr in value[key])
+   .attr= attr
+    -for (info in value[key][attr])
+     .info= info
+     if(info = 'info')
+     -for (line in value[key][attr]['info'])
+      .line= line + value[key][attr][info][line]

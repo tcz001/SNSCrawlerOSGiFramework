@@ -1,0 +1,11 @@
+html
+   header
+      include stylesheet.css
+      include header.jade
+   body
+      include banner.jade
+      if(title == 'console')
+        include console.jade
+      if(title == 'query')
+        include list.jade
+      include footer.jade

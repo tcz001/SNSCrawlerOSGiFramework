@@ -1,6 +1,7 @@
 .container
    h2= '模块状态'
    .lead= bundles['status']
+   include update_form.html
    table.table.table-striped.table-bordered.table-condensed
      thead
        tr
@@ -16,18 +17,12 @@
          td
            .dropdown
              a.dropdown-toggle(href='#', data-toggle='dropdown')
-               | Action
+               |  操作
                b.caret
              ul.dropdown-menu
-               li.nav-header Switch state
-               li
-                 a(href='/console/start?id=' + bundles['data'][id]['id']) Start
-               li
-                 a(href='/console/stop?id=' + bundles['data'][id]['id']) Stop
+               li.nav-header 状态
                li.divider
-               li.nav-header Nav header
                li
-                 a(href='#') Separated link
+                 a(href='/console/start?id=' + bundles['data'][id]['id']) 开启
                li
-                 a(href='#') One more separated link
-   include update_form.html
+                 a(href='/console/stop?id=' + bundles['data'][id]['id']) 关闭

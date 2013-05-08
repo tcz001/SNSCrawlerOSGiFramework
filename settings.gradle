@@ -5,4 +5,5 @@ include "OAuthAPIBundle",
 	"tencentWeiboFetchAPIBundle",
 	"sinaWeiboFetchAPIBundle",
     "twitterFetchAPIBundle",
+    "HeXunFetchNaiveBundle",
     "FetchClientBundle"

@@ -8,15 +8,11 @@ table.table.table-striped.table-bordered.table-condensed
    tr
      td= key
      td
-      table.table.table-striped.table-bordered.table-condensed
-       -for (attr in value[key])
-        -if(attr == 'data')
-        -for (info in value[key][attr])
-         -if(info == 'info')
-          -for (line in value[key][attr][info])
-           tr
-            -for (weibo in value[key][attr][info][line])
-              -if(weibo == 'text')
-                td= value[key][attr][info][line][weibo]
-              -if(weibo == 'id')
-                td= value[key][attr][info][line][weibo]
+        table.table.table-striped.table-bordered.table-condensed
+            -for (line in value[key])
+             tr
+              -for (weibo in value[key][line])
+                -if(weibo == 'text')
+                  td= value[key][line][weibo]
+                -if(weibo == 'id')
+                  td= value[key][line][weibo]

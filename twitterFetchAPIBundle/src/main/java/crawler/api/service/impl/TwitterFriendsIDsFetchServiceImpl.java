@@ -1,6 +1,7 @@
 package crawler.api.service.impl;
 
 import crawler.api.service.TwitterFetchService;
+import crawler.api.service.fetch.Weibo;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.scribe.model.OAuthRequest;
@@ -9,6 +10,7 @@ import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import redis.clients.jedis.Jedis;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
@@ -108,8 +110,10 @@ public class TwitterFriendsIDsFetchServiceImpl implements TwitterFetchService,Ru
     }
 
     @Override
-    public void log() {
+    public void log(String uid, ArrayList<Weibo> timeline) {
+        jedis.hset("twitter:uid:" + uid, "time_line", JSONArray.fromObject(timeline).toString());
     }
+
 
     @Override
     public void stop() {

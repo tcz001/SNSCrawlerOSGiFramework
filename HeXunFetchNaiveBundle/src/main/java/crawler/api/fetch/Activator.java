@@ -12,7 +12,7 @@ public class Activator implements BundleActivator {
 
     private ServiceTracker<?, ?> crawlerServiceTracker;
     private HeXunFetchService crawlerService;
-    Thread sina;
+    Thread hexun;
 
     /*
      * (non-Javadoc)
@@ -35,8 +35,8 @@ public class Activator implements BundleActivator {
 
         if (crawlerService != null) {
             crawlerService.init();
-            sina = new Thread(crawlerService);
-            sina.start();
+            hexun = new Thread(crawlerService);
+            hexun.start();
         }
     }
 

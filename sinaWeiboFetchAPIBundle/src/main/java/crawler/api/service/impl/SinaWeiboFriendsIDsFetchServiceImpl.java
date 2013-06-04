@@ -1,5 +1,6 @@
 package crawler.api.service.impl;
 
+import crawler.api.service.fetch.Weibo;
 import org.scribe.exceptions.OAuthConnectionException;
 import org.scribe.model.OAuthRequest;
 import org.scribe.model.Response;
@@ -10,7 +11,9 @@ import net.sf.json.*;
 import crawler.api.service.SinaWeiboFetchService;
 import redis.clients.jedis.*;
 
-public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService{
+import java.util.ArrayList;
+
+public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchService {
     private static final String GET_FRIENDS_IDs_URL = "https://api.weibo.com/2/friendships/friends/ids.json";
     private static final String GET_FOLLOWERS_IDs_URL = "https://api.weibo.com/2/friendships/followers/ids.json";
     private static final String GET_STATUS_BY_ID_URL = "https://api.weibo.com/2/statuses/user_timeline.json";
@@ -27,7 +30,7 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         stop = false;
         jedis = new Jedis("localhost");
         sinaOAuthImpl = new SinaOAuthImpl();
-        if (jedis.get("sina:Token:token")!=null)
+        if (jedis.get("sina:Token:token") != null)
             sinaOAuthImpl.accessToken = new Token(jedis.get("sina:Token:token"), jedis.get("sina:Token:secret"));
         else {
             sinaOAuthImpl.fetchToken();
@@ -43,12 +46,12 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
             if (stop) return;
             for (Object follower_id : fetch_fids_by_id(id)) {
                 if (stop) return;
-                fetch_timeline_by_fid(follower_id);
+                log(follower_id.toString(),fetch_timeline_by_fid(follower_id));
             }
         }
     }
 
-    private JSONArray fetch_ids() {
+    public JSONArray fetch_ids() {
         // Now let's go and ask for a protected resource!
         System.out.println("Now we're going to access a friends Idlist...");
         request = new OAuthRequest(Verb.GET, GET_FRIENDS_IDs_URL);
@@ -59,7 +62,7 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         return json.getJSONArray("ids");
     }
 
-    private JSONArray fetch_fids_by_id(Object id) {
+    public JSONArray fetch_fids_by_id(Object id) {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -78,8 +81,9 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
         return fids;
     }
 
-    private void fetch_timeline_by_fid(Object fid) {
-        if (stop) return;
+    public ArrayList<Weibo> fetch_timeline_by_fid(Object fid) {
+        ArrayList<Weibo> timeline = new ArrayList<Weibo>();
+        if (stop) return timeline;
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -95,15 +99,26 @@ public class SinaWeiboFriendsIDsFetchServiceImpl implements SinaWeiboFetchServic
             response = request.send();
             if (response.getCode() == 200) {
                 json = JSONObject.fromObject(response.getBody());
-                jedis.hset("sina:uid:" + fid.toString(), "time_line", json.toString());
+                try {
+                    for (Object object : json.getJSONArray("statuses").toArray()) {
+                        JSONObject jsonObject = (JSONObject) object;
+                        String id = jsonObject.get("id").toString();
+                        String text = jsonObject.get("text").toString();
+                        timeline.add(new Weibo(id, text));
+                    }
+                } catch (IndexOutOfBoundsException ignored) {
+
+                }
             } else fetch_timeline_by_fid(fid);
         } catch (OAuthConnectionException o) {
             fetch_timeline_by_fid(fid);
         }
+        return timeline;
     }
 
     @Override
-    public void log() {
+    public void log(String uid,ArrayList<Weibo> timeline) {
+        jedis.hset("sina:uid:"+ uid , "time_line", JSONArray.fromObject(timeline).toString());
     }
 
     @Override

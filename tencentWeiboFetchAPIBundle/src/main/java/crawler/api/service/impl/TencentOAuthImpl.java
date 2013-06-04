@@ -18,13 +18,12 @@ public class TencentOAuthImpl implements OAuthAccessService {
 	OAuthService service;
 	Token accessToken;
 	String client_id;
-	private Scanner in;
 
-	public TencentOAuthImpl() {
+    public TencentOAuthImpl() {
 		// Replace these with your own api key and secret
 		apiKey = "801320236";
 		apiSecret = "8e552278a16399189233b111ea11ecf7";
-        client_id = new String("B94FB0DE54C3269F73C737311E12B5D5");
+        client_id = "B94FB0DE54C3269F73C737311E12B5D5";
 		service = new ServiceBuilder()
 				.provider(TencentWeiboApi.class).apiKey(apiKey)
 				.apiSecret(apiSecret)
@@ -33,7 +32,7 @@ public class TencentOAuthImpl implements OAuthAccessService {
 
 	@Override
 	public void fetchToken() {
-		in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
 		System.out.println("=== " + NETWORK_NAME + "'s OAuth Workflow ===");
 		System.out.println();

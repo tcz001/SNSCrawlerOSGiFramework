@@ -35,13 +35,13 @@ public class HeXunFriendsIDsFetchServiceImpl {
                     .header("Accept-Encoding","gzip,deflate,sdch");
             Document document = connect.get();
 
-            Elements elements = document.select("a");
+            Elements anchors = document.select("a");
             outAnchorUrls = new ArrayList<String>();
-            for (Element element : elements) {
-                String outUrl = element.attr("href");
+            for (Element anchor : anchors) {
+                String outUrl = anchor.attr("href");
                 if (outUrl.matches("(http://t\\.hexun\\.com)?/g/\\d+_1(\\.html)?")){
-                    System.out.println(element.attr("href"));
-                    outAnchorUrls.add(element.attr("href"));
+                    System.out.println(anchor.attr("href"));
+                    outAnchorUrls.add(anchor.attr("href"));
                 }
             }
         } catch (IOException e) {

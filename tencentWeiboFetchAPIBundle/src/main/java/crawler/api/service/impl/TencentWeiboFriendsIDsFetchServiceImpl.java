@@ -1,6 +1,7 @@
 package crawler.api.service.impl;
 
 import crawler.api.service.TencentWeiboFetchService;
+import crawler.api.service.fetch.Weibo;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.scribe.model.OAuthRequest;
@@ -9,6 +10,7 @@ import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import redis.clients.jedis.Jedis;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetchService, Runnable {
@@ -45,7 +47,7 @@ public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
             if (stop) return;
             for (Object fdata : fetch_fdatas_by_data((JSONObject) data)) {
                 if (stop) return;
-                fetch_timeline_by_fdata((JSONObject) fdata);
+                log(((JSONObject) fdata).getString("openid"),fetch_timeline_by_fdata((JSONObject) fdata));
             }
         }
 
@@ -77,8 +79,12 @@ public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         System.out.print("Now crawler at the id : ");
         System.out.println(id);
         JSONArray fdatas = new JSONArray();
-        getJsonArray("0", id, fdatas);
-        jedis.hset("tencent:uid:" + id, "followers_ids", fdatas.toString());
+        if (jedis.hget("tencent:uid:" + id, "followers_ids") != null)
+            fdatas = JSONArray.fromObject(jedis.hget("tencent:uid:" + id, "followers_ids"));
+        else {
+            getJsonArray("0", id, fdatas);
+            jedis.hset("tencent:uid:" + id, "followers_ids", fdatas.toString());
+        }
         return fdatas;
     }
 
@@ -100,11 +106,11 @@ public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
             getJsonArray(json.getJSONObject("data").get("nextstartpos").toString(), id, fdatas);
     }
 
-    private void fetch_timeline_by_fdata(JSONObject fdata) {
-        if (stop) return;
+    private ArrayList<Weibo> fetch_timeline_by_fdata(JSONObject fdata) {
+        if (stop) return new ArrayList<Weibo>();
         String fid = fdata.get("openid").toString();
         if (accessedUidSet.contains(fid))
-            return;
+            return new ArrayList<Weibo>();
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -125,11 +131,20 @@ public class TencentWeiboFriendsIDsFetchServiceImpl implements TencentWeiboFetch
         response = request.send();
         json = JSONObject.fromObject(response.getBody());
         accessedUidSet.add(fid);
-        jedis.hset("tencent:uid:" + fid, "time_line", json.toString());
+        ArrayList<Weibo> timeline = new ArrayList<Weibo>();
+        if (json.containsKey("data") && json.getJSONObject("data").containsKey("info"))
+            for (Object object : json.getJSONObject("data").getJSONArray("info")) {
+                JSONObject jsonObject = (JSONObject) object;
+                if (jsonObject.containsKey("id") && jsonObject.containsKey("id")) {
+                    timeline.add(new Weibo(jsonObject.getString("id") ,jsonObject.getString("text")));
+                }
+            }
+        return timeline;
     }
 
     @Override
-    public void log() {
+    public void log(String uid, ArrayList<Weibo> timeline) {
+        jedis.hset("tencent:uid:" + uid, "time_line", JSONArray.fromObject(timeline).toString());
     }
 
     @Override
